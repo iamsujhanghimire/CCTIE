@@ -1,0 +1,14 @@
+.navbar-custom{
+    background-color: black;
+    font-family: 'Space Grotesk', sans-serif;
+    color: red;
+}
+.nav-logo{
+    margin-left: 5%;
+}
+#navbarNav ul{
+    margin:auto;
+}
+.navbar-custom a{
+    color: red;
+}
