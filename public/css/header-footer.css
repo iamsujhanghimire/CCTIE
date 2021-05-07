@@ -1,7 +1,19 @@
+:root {
+    /* CSS HEX */
+    --rich-black-fogra-39: #0b090aff;
+    --eerie-black: #161a1dff;
+    --blood-red: #660708ff;
+    --ruby-red: #a4161aff;
+    --carnelian: #ba181bff;
+    --imperial-red: #e5383bff;
+    --silver-chalice: #b1a7a6ff;
+    --light-gray: #d3d3d3ff;
+    --cultured: #f5f3f4ff;
+    --white: #ffffffff;
+}
 .navbar-custom{
-    background-color: black;
+    background-color: var(--white);
     font-family: 'Space Grotesk', sans-serif;
-    color: red;
 }
 .nav-logo{
     margin-left: 5%;
@@ -10,5 +22,5 @@
     margin:auto;
 }
 .navbar-custom a{
-    color: red;
+    color: var(--carnelian);
 }
