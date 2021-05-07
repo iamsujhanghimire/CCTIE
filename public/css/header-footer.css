@@ -12,15 +12,23 @@
     --white: #ffffffff;
 }
 .navbar-custom{
-    background-color: var(--white);
+    background-color: var(--light-gray);
     font-family: 'Space Grotesk', sans-serif;
 }
-.nav-logo{
-    margin-left: 5%;
+.nav-logo img{
+    display: block;
+    margin-left: auto;
 }
 #navbarNav ul{
-    margin:auto;
+    margin-left :auto;
+    margin-right: 10%;
 }
 .navbar-custom a{
+    color: var(--carnelian);
+}
+.CCTIE{
+    margin-left: 2%;
+}
+.CCTIE strong{
     color: var(--carnelian);
 }
