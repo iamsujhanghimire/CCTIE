@@ -1,0 +1,73 @@
+:root {
+    /* CSS HEX */
+    --rich-black-fogra-39: #0b090aff;
+    --eerie-black: #161a1dff;
+    --blood-red: #660708ff;
+    --ruby-red: #a4161aff;
+    --carnelian: #ba181bff;
+    --imperial-red: #e5383bff;
+    --silver-chalice: #b1a7a6ff;
+    --light-gray: #d3d3d3ff;
+    --cultured: #f5f3f4ff;
+    --white: #ffffffff;
+}
+
+.login-logo img{
+    width: 15%;
+    height: 20%;
+    margin-left: 43%;
+    margin-top: 5%;
+}
+#register-logo{
+    display: flex;
+    align-content: center;
+    max-width: 8%;
+}
+
+.login-heading{
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.login-form{
+    margin: auto;
+}
+#login-section{
+    margin-bottom: 10%;
+}
+
+.custom-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+
+}
+.custom-btn button{
+    background-color: var(--carnelian);
+    color: var(--white);
+    width: 50%;
+    font-family: 'Quicksand', sans-serif;
+}
+.card{
+    width: 65%;
+    margin-top: 3%;
+    margin-bottom: 30%;
+}
+.reg-form .card{
+    border-width: 5px;
+    border-color: var(--eerie-black);
+    margin: auto;
+}
+.outer-card{
+    margin: auto;
+    margin-top: 10%;
+    border-width: 5px;
+    border-color: var(--eerie-black);
+    width: 40%;
+}
+
+.pos{
+    margin-top: 2%;
+}

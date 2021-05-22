@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>TIE</title>
 
-    <link rel="stylesheet" href="css/register.css">
-
     <!--    Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -15,10 +13,12 @@
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="css/login-register.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+
     <!--    Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=RocknRoll+One&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
     <!--    fontawesome-->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
@@ -28,11 +28,11 @@
 
     <script src="js/login.js" defer></script>
 </head>
-<body class="container">
+<body>
 
 <!-- Header -->
 <section id="header">
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <div class="logoDiv col-1">
                 <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width = 50% class="logo-to-home"/></a>
@@ -71,58 +71,78 @@
     </nav>
 </section>
 
-<!--Logo-->
-<section>
-    <img id="register-logo" src="src/img/logo.png" alt="TIE Logo">
-</section>
+<!--Registration Form-->
+<section id="login-section" class="container mainSection">
+    <div class="card outer-card">
+        <div class="login-logo">
+            <img id="login-logo" src="src/img/logo.png" alt="TIE Logo">
+        </div>
 
-<div class="container mt-3">
-    <h1 class="login-heading">Register for TIE's Admin Access</h1>
+        <div class="container">
+            <h1 class="login-heading">Register a TIE Account</h1>
+            <div class="login-card">
+                <!-- Makes POST request to /login route -->
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Full name</label>
+                        <input type="text" class="form-control" name="fullname" id="fullname">
+                    </div>
+                    <div class="mb-3 pos">
+                        <label for="brand">E-board Position</label>
+                        <select id="brand" class="form-select" aria-label="Default select example" name="brand">
+                            <option selected value="">Select your E-board position</option>
+                            <option value="President">President</option>
+                            <option value="Vice President">Vice President</option>
+                            <option value="Treasurer">Treasurer</option>
+                            <option value="Secretary">Secretary</option>
+                            <option value="Finance Coordinator">Finance Coordinator</option>
+                            <option value="Marketing Coordinator">Marketing Coordinator</option>
+                            <option value="Opportunities Coordinator">Opportunities Coordinator</option>
+                            <option value="Communications Coordinator">Communications Coordinator</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="username" id="email">
+                    </div>
+                    <div class="form-group pos">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <div class="form-group pos">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirm" id="confirm">
+                    </div>
+                    <div style="color: red"><p id="error_msg"></p></div>
+                    <div class="custom-btn">
+                    <button type="submit" class="btn mt-3">Register</button>
+                    </div>
+                </form>
 
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="card register-card">
-                <div class="card-body">
-                    <!-- Makes POST request to /register route -->
-                    <form action="/register" method="POST">
-                        <div class="form-group">
-                            <label for="fullname">Full name</label>
-                            <input type="text" class="form-control" name="fullname" id="fullname">
-                        </div>
-                        <div class="mb-3 pos">
-                            <label for="brand">E-board Position</label>
-                            <select id="brand" class="form-select" aria-label="Default select example" name="brand">
-                                <option selected value="">Select your E-board position</option>
-                                <option value="President">President</option>
-                                <option value="Vice President">Vice President</option>
-                                <option value="Treasurer">Treasurer</option>
-                                <option value="Secretary">Secretary</option>
-                                <option value="Finance Coordinator">Finance Coordinator</option>
-                                <option value="Marketing Coordinator">Marketing Coordinator</option>
-                                <option value="Opportunities Coordinator">Opportunities Coordinator</option>
-                                <option value="Communications Coordinator">Communications Coordinator</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" name="username" id="email">
-                        </div>
-                        <div class="form-group pos">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password">
-                        </div>
-                        <div class="form-group pos">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" name="confirm" id="confirm">
-                        </div>
-                        <div style="color: red"><p id="error_msg"></p></div>
-                        <button type="submit" class="btn btn-danger mt-3">Register</button>
-                    </form>
-
-                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<section id="footer">
+    <div id="footer-content">
+        <div class="footer-1 footer-heading">
+            <h2><strong>Q</strong>uick <strong>L</strong>inks</h2>
+            <a href="eboard.html">Team</a>
+            <a href="events.html">Events</a>
+            <a href="project-submit.html">Submit a Project</a>
+            <a href="project.html">Existing Projects</a>
+        </div>
+        <div class="footer-2 footer-heading">
+            <h2><strong>S</strong>ocial <strong>M</strong>edia</h2>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkTree</a>
+        </div>
+    </div>
+    <div class = footer-bottom>
+        &copy; All rights reserved @ 2021<br>
+        Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S21)
+    </div>
+</section>
 </body>
 </html>
