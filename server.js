@@ -2,13 +2,62 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
+
+
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 
+
+app.use(session({
+    secret: "alongsecretonlyiknow_asdlfkhja465xzcew523",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.listen(3000, function () {
     console.log("server started at 3000");
 });
+
+
+const userSchema= new mongoose.Schema(
+    {
+        username:{
+            type: String,
+            unique: true,
+            require: true,
+            minlength: 3
+        },
+        password:{
+            type: String,
+            require: true
+        },
+        confirm:{
+            type: String,
+            require: true
+        },
+        fullname:{
+            type: String,
+            require: true
+        },
+        eboardpostion:{
+            type: String,
+            require: true
+        }
+    }
+);
+userSchema.plugin(passportLocalMongoose);
+
+const User = mongoose.model('User', userSchema);
+
+
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + "/public/index.html");
