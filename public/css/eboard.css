@@ -1,0 +1,26 @@
+img {
+    width: 100%;
+}
+
+.pet_img {
+    width: 50px;
+}
+
+.name_text {
+    font-size: x-large;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+.main_text {
+    font-size: large;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.italic_text {
+    color: maroon;
+    font-style: italic;
+}
+
+.gold_bg {
+    background-color: gold;
+}
