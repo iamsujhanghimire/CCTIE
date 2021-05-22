@@ -21,6 +21,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+mongoose.connect('mongodb://localhost:27017/tieDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set("useCreateIndex", true);
 
 app.listen(3000, function () {
     console.log("server started at 3000");
@@ -95,8 +97,6 @@ app.post('/register', (req, res) => {
             }
             if (err) {
                 res.redirect("/register?error=" + err);
-
-
             } else {
                 //write into cookies, authenticate the requests
                 const authenticate = passport.authenticate("local");
