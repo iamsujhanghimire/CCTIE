@@ -32,3 +32,22 @@
 .CCTIE strong{
     color: var(--carnelian);
 }
+.navbar-custom a:hover{
+    color: var(--rich-black-fogra-39);
+}
+.navbar-custom .navbar-toggler{
+    border-color: var(--carnelian);
+}
+#footer .footer-content{
+    height: 200px;
+    background-color: var(--light-gray);
+}
+#footer .footer-bottom{
+    display: block;
+    background-color: var(--eerie-black);
+    color: var(--carnelian);
+    height: 100px;
+    text-align: center;
+    padding-top: 25px;
+
+}
