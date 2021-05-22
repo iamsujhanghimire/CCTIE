@@ -53,13 +53,6 @@ function processData(raw) {
         const address = document.createElement('p');
         address.innerText = member.address;
         infoDiv.appendChild(address);
-
-        //Member's Pet Preference
-        const img2 = document.createElement('img');
-        img2.setAttribute('src', getPet(member.pet));
-        //setting the class for pet's image for css styling
-        img2.setAttribute('class', 'pet_img');
-        infoDiv.appendChild(img2);
     }
 
     document.querySelectorAll('#member_list h1').forEach(ele => {
@@ -90,12 +83,6 @@ function processData(raw) {
     }
 }
 
-function getPet(pet) {
-    if (pet === "dog") return "img/dog.svg";
-    else if (pet === "cat") return "img/cat.svg";
-    else if (pet === "both") return "img/both.svg";
-    else return "img/none.svg";
-}
 
 let selectedPrefs = {};
 

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Clark Center for TIE</title>
+
     <!--    Favicon-->
     <link rel="shortcut icon" type="image/png" href="/src/img/logo.png">
+
     <!--    Stylesheet  & Bootstrap     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -13,29 +15,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
+
     <!--    CSS-->
     <link rel="stylesheet" href="css/eboard.css">
     <link rel="stylesheet" href="css/header-footer.css">
+
     <!--    Google Font     -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
     <!--    Font Awesome    -->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
+
     <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Papa Parse-->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"
+            integrity="sha256-Xjq9HM9n3XzT47n/NmSEaJUwPi7hme++D8mxHfSr+0Q=" crossorigin="anonymous"></script>
 
     <script src="js/eboard.js" defer></script>
 </head>
 
-<!--Header-->
+
 <body class="container">
+
+<!--Header-->
 <section id="header">
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <div class="logoDiv col-1">
                 <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width = 50% class="logo-to-home"/></a>
             </div>
-            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>Technology<br> <strong>I</strong>nnovation and <strong>E</strong>ntrepreneurship</div>
+            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and <strong>E</strong>ntrepreneurship</div>
 
             <div class="collapse navbar-collapse col-8" id="navbarNav">
                 <ul class="navbar-nav">
@@ -68,8 +80,13 @@
         </div>
     </nav>
 </section>
+<br>
 
+<section id="members">
+    <ul id="member_list" class="list-group"/>
+</section>
 
+<!-- Footer -->
 <section id="footer">
     <div class="footer-container">
         <div class="footer">
@@ -84,6 +101,5 @@
     </div>
 </section>
 
-<ul id="member_list" class="list-group"/>
 </body>
 </html>

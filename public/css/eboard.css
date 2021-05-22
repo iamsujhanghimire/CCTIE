@@ -1,6 +1,9 @@
-img {
-    width: 100%;
+.nav-logo img{
+    display: block;
+    margin-left: auto;
 }
+
+
 
 .pet_img {
     width: 50px;
@@ -23,4 +26,8 @@ img {
 
 .gold_bg {
     background-color: gold;
+}
+
+#members img {
+    width: 100%;
 }
