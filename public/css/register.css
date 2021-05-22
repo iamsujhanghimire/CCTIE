@@ -33,7 +33,7 @@
     width: 15%;
     height: 20%;
     margin-left: 43%;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .btn-info{
@@ -74,5 +74,40 @@
 
 .pos{
     margin-top: 2%;
+}
+
+:root {
+    /* CSS HEX */
+    --rich-black-fogra-39: #0b090aff;
+    --eerie-black: #161a1dff;
+    --blood-red: #660708ff;
+    --ruby-red: #a4161aff;
+    --carnelian: #ba181bff;
+    --imperial-red: #e5383bff;
+    --silver-chalice: #b1a7a6ff;
+    --light-gray: #d3d3d3ff;
+    --cultured: #f5f3f4ff;
+    --white: #ffffffff;
+}
+.navbar-custom{
+    background-color: var(--light-gray);
+    font-family: 'Space Grotesk', sans-serif;
+}
+.nav-logo img{
+    display: block;
+    margin-left: auto;
+}
+#navbarNav ul{
+    margin-left :auto;
+    margin-right: 10%;
+}
+.navbar-custom a{
+    color: var(--carnelian);
+}
+.CCTIE{
+    margin-left: 2%;
+}
+.CCTIE strong{
+    color: var(--carnelian);
 }
 
