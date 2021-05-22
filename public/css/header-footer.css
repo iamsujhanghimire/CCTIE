@@ -38,12 +38,20 @@
 .navbar-custom .navbar-toggler{
     border-color: var(--carnelian);
 }
+#footer{
+    position: relative;
+}
 #footer .footer-content{
     height: 200px;
     background-color: var(--light-gray);
+    border: 2px blue;
 }
 #footer .footer-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: block;
+    width: 100%;
     background-color: var(--eerie-black);
     color: var(--carnelian);
     height: 100px;
