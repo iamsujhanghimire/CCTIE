@@ -73,34 +73,55 @@ app.get('/register', (req, res) => {
     }
 });
 
+// app.post('/register', (req, res) => {
+//     const newUser = {
+//         username: req.body.username,
+//         fullname: req.body.fullname,
+//         // profile: req.body.profile,
+//         // brand: req.body.brand
+//     };
+//
+//     User.register(
+//         newUser,
+//         req.body.password,
+//         function (err, user) {
+//             if(req.body.password!== req.body.confirm){
+//                 console.log(err);
+//                 res.redirect("/register?error= Password must match" );
+//             }
+//             else{
+//                 const authenticate = passport.authenticate("local");
+//                 authenticate(req, res, function () {
+//                     res.redirect("/")
+//                 });
+//             }
+//             if (err) {
+//                 res.redirect("/register?error=" + err);
+//             } else {
+//                 //write into cookies, authenticate the requests
+//                 const authenticate = passport.authenticate("local");
+//                 authenticate(req, res, function () {
+//                     res.redirect("/project")
+//                 });
+//             }
+//         }
+//     );
+//
+// });
 app.post('/register', (req, res) => {
-    const newUser = {
-        username: req.body.username,
-        fullname: req.body.fullname,
-        // profile: req.body.profile,
-        // brand: req.body.brand
+    const newUser={username: req.body.username, fullname: req.body.fullname
     };
-
     User.register(
         newUser,
         req.body.password,
-        function (err, user) {
-            if(req.body.password!== req.body.confirm){
+        function(err, user){
+            if(err){
                 console.log(err);
-                res.redirect("/register?error= Password must match" );
-            }
-            else{
-                const authenticate = passport.authenticate("local");
-                authenticate(req, res, function () {
-                    res.redirect("/")
-                });
-            }
-            if (err) {
-                res.redirect("/register?error=" + err);
-            } else {
+                res.redirect("/register?error="+err);
+            }else{
                 //write into cookies, authenticate the requests
                 const authenticate = passport.authenticate("local");
-                authenticate(req, res, function () {
+                authenticate(req,res, function (){
                     res.redirect("/")
                 });
             }
