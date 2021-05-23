@@ -3,31 +3,23 @@
     margin-left: auto;
 }
 
-
-
-.pet_img {
-    width: 50px;
+#member_list img{
+    border-radius: 10%;
+    width: 100%;
 }
 
 .name_text {
+    margin-top: 2%;
     font-size: x-large;
-    font-family: 'RocknRoll One', sans-serif;
+    font-family: 'Raleway', sans-serif;;
 }
 
 .main_text {
     font-size: large;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.italic_text {
-    color: maroon;
+.main_text .h5{
     font-style: italic;
 }
 
-.gold_bg {
-    background-color: gold;
-}
-
-#members img {
-    width: 100%;
-}

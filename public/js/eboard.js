@@ -26,7 +26,8 @@ function processData(raw) {
 
         //Div for Member Information
         const infoDiv = document.createElement('div');
-        infoDiv.classList.add('col-lg-9');
+        infoDiv.classList.add('col-lg-9')
+        infoDiv.classList.add('ebInfo');
         rowDiv.appendChild(infoDiv);
 
         //Member Picture
@@ -39,27 +40,34 @@ function processData(raw) {
         name.innerText = member.first_name + " " + member.last_name;
         infoDiv.appendChild(name);
 
-        //Member Department
-        const major = document.createElement('h5');
+        //Member Club Title
+        const major = document.createElement('h4');
         major.innerHTML = member.major;
         infoDiv.appendChild(major);
 
-        //Member Email
-        const email = document.createElement('p');
-        email.innerText = member.email;
-        infoDiv.appendChild(email);
-
-        //Member Address
-        const address = document.createElement('p');
-        address.innerText = member.address;
+        //Member Major
+        const address = document.createElement('h4');
+        address.innerText = "Major: " + member.address;
         infoDiv.appendChild(address);
+
+        //Member Area of Interest
+        const interests = document.createElement('h4');
+        interests.innerText = "Area of Interest: " + member.interests;
+        infoDiv.appendChild(interests);
+
+        //Member LinkedIn
+        const icons = document.createElement('a');
+        icons.innerHTML = `<i class="fab fa-linkedin" onclick="" style="width: 100px"></i>`
+        infoDiv.appendChild(icons)
+
+
     }
 
     document.querySelectorAll('#member_list h1').forEach(ele => {
         ele.classList.add('name_text');
     });
 
-    document.querySelector('#member_list').querySelectorAll('h5,p').forEach(ele => {
+    document.querySelector('#member_list').querySelectorAll('h4,p').forEach(ele => {
         ele.classList.add("main_text");
     });
 
@@ -73,41 +81,8 @@ function processData(raw) {
         ele.classList.add("larger_text");
     });
 
-    const memberList = document.querySelector('#member_list').children;
-    console.log(memberList);
-    for (let i = 0; i < memberList.length; i++) {
-        memberList[i].addEventListener('click', function () {
-            console.log(memberList[i]);
-            memberList[i].classList.toggle('italic_text');
-        });
-    }
 }
-
-
-let selectedPrefs = {};
-
-function showList(val) {
-    let petPreference = '';
-    selectedPrefs[val.value] = val.checked;
-    let memberList = document.getElementById('member_list');
-    const child = memberList.childNodes;
-
-    for (let i = 0; i < child.length; i++) {
-        petPreference = child[i].lastChild.lastChild.lastChild;
-        let source = petPreference.getAttribute("src");
-        //When nothing is selected, remove gold bg
-        if (source.includes(val.value) && !val.checked) {
-            child[i].classList.remove("gold_bg");
-        }
-        //Change gold bg according to highlight selection
-        for (let pref in selectedPrefs) {
-            if (source.includes(pref) && selectedPrefs[pref]) {
-                child[i].classList.add("gold_bg");
-                break;
-            }
-        }
-    }
-}
+// $('.ebInfo a').append(`<i class="fab fa-linkedin"></i>`)
 
 
 
