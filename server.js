@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -13,7 +15,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 app.use(session({
-    secret: "alongsecretonlyiknow_asdlfkhja465xzcew523",
+    secret: process.env.PASSPORT_SECRET,
     resave: false,
     saveUninitialized: false
 }));
