@@ -3,4 +3,208 @@
 /*font-family: 'Raleway', sans-serif;*/
 /*font-family: 'Space Grotesk', sans-serif;*/
 /*------------------------------------------------*/
+body {
+    background: #a1dafc;
+    background: -webkit-linear-gradient(to right, #f6eded, #9a9c9f);
+    background: linear-gradient(to right, #f6eded, #9a9c9f);
+    min-height: 100vh;
+}
 
+.carousel-item img{
+    max-height: 20%;
+    max-width: 100%;
+    margin: auto;
+}
+
+#carouselExampleControls{
+    background: black;
+}
+
+/*/////*/
+
+body {
+    background-color:  #eee;
+}
+.title {
+
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    /*padding: 2%;*/
+    padding-right: 7%;
+    padding-top: 5%;
+    border: none;
+    /*border-top: 1px solid rgba(34, 36, 38, .1);*/
+    box-shadow: none;
+
+}
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5px;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+}
+
+.card-title{
+    font-family: Raleway;
+    font-weight: bold;
+    color: var(--carnelian);
+}
+
+.card2-title{
+    font-family: Raleway;
+    font-weight: bold;
+    color: var(--carnelian);
+    margin-left: 5%;
+    text-align: right;
+
+}
+
+.card-text{
+    font-family: Raleway;
+    margin-top: 3%;
+    font-size: large;
+}
+
+.card2-text{
+    font-family: Raleway;
+    margin-top: 3%;
+    font-size: large;
+    margin-left: 5%;
+    text-align: right;
+}
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators .active {
+    background-color: white;
+    max-width: 12px;
+    margin: 0 3px;
+    height: 12px;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+
+.btn {
+    margin-top: 2%;
+    font-family: Raleway;
+    background: var(--carnelian);
+}
+
+#small-carousel img{
+    max-height: 10%;
+    max-width: 80%;
+    margin-right: 5%;
+}
+
+#small-carousel1 img{
+    max-height: 10%;
+    max-width: 80%;
+    margin-right: 5%;
+    margin-left: 0;
+}
+/********/
+
+body{
+    margin-top:20px;
+    background:#FAFAFA;
+}
+
+.value-card-title{
+    font-family: Raleway;
+    font-weight: bold;
+    color: var(--carnelian);
+    text-align: center;
+}
+
+.value-card {
+    background: var(--carnelian);
+}
+
+.value-title{
+    font-size: 26px;
+    color: #fff;
+    font-family: Raleway;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.value-description{
+    font-family: Raleway;
+    font-size: medium;
+    color: #fff;
+    text-align: center;
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+/********** NEWS *********/
+.news-header{
+    font-family: Raleway;
+    color: var(--carnelian);
+    font-weight: bold;
+}
+
+.news-img{
+    height: 300px;
+    width: 500px;
+}
+
+#news h3{
+    font-family: Raleway;
+}
+
+#news p{
+    font-family: Raleway;
+}
+
+.news-btn{
+    border: none;
+
+}

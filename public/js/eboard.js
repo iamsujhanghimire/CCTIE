@@ -60,6 +60,9 @@ function processData(raw) {
         icons.innerHTML = `<i class="fab fa-linkedin" onclick="" style="width: 100px"></i>`
         infoDiv.appendChild(icons)
 
+        const linkedin = document.createElement('h4');
+        linkedin.innerHTML = `<a href=member.linkedin>LinkedIn</a>`
+        infoDiv.appendChild(linkedin);
 
     }
 

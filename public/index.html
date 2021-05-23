@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Clark Center for TIE</title>
-<!--    Favicon-->
+    <!--    Favicon-->
     <link rel="shortcut icon" type="image/png" href="/src/img/logo.png">
-<!--    Stylesheet  & Bootstrap     -->
+    <!--    Stylesheet  & Bootstrap     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
@@ -15,26 +15,31 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header-footer.css">
-<!--    Google Font     -->
+    <!--    Google Font     -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-<!--    Font Awesome    -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap"
+          rel="stylesheet">
+    <!--    Font Awesome    -->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
-<!--    Google jQuery & JS  -->
+    <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="js/index.js" defer></script>
 </head>
 
-<!-- Header -->
 <body>
+
+<!-- Header -->
 <section id="header">
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <div class="logoDiv col-1">
-                <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width = 50% class="logo-to-home"/></a>
+                <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width=50%
+                                                           class="logo-to-home"/></a>
             </div>
-            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and <strong>E</strong>ntrepreneurship</div>
+            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and
+                <strong>E</strong>ntrepreneurship
+            </div>
 
             <div class="collapse navbar-collapse col-8" id="navbarNav">
                 <ul class="navbar-nav">
@@ -48,7 +53,8 @@
                         <a class="nav-link" href="events.html">Events</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="project.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="project.html" id="navbarDropdownMenuLink"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Explore Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -67,36 +73,255 @@
         </div>
     </nav>
 </section>
-<section class = "mainSection">
-    <section id = "introSection">
 
-    </section>
+<!-- Main Body -->
 
-    <section id = "newsSection">
+<!-- Carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="src/img/1.jpeg" class="d-block w-100" alt="..." data-interval="1000">
+        </div>
+        <div class="carousel-item">
+            <img src="src/img/2.jpeg" class="d-block w-100" alt="..." data-interval="1000">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
 
-    </section>
-</section>
+<!-- Card 1 -->
+<div class="card">
+    <div class="row ">
+        <!-- Carousel start -->
+        <div class="col-md-5">
+            <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
+                    <li data-target="#CarouselTest" data-slide-to="1"></li>
+                    <li data-target="#CarouselTest" data-slide-to="2"></li>
+
+                </ol>
+                <div class="carousel-inner">
+                    <div id="small-carousel" class="carousel-item active">
+                        <img class="d-block" src="src/img/Hack.jpeg" alt="" data-interval="1000">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block" src="src/img/3.jpeg" alt="" data-interval="1000">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="" data-interval="1000">
+                    </div>
+                    <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End of carousel -->
+        <!-- Card Info -->
+        <div class="col-md-7 px-3">
+            <div class="card-block px-6">
+                <h2 class="card-title">OUR MISSION</h2>
+                <p class="card-text">
+                    Our mission is to harvest technological, innovative, and entrepreneurial talent and use it for
+                    our community’s benefit while also placing our members in a position to succeed, both personally
+                    and professionally.
+                </p>
+                <p class="card-text">
+                    At TIE, we "learn to grow or grow by learning, these are the only choices". Every step in life
+                    is a growth process that we have learnt to embrace. With that, we would like to educate,
+                    innovate and inspire one another.
+                </p>
+                <br>
+                <a href="/eboard.html" class="mt-auto btn btn-danger">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Value Cards -->
+<div>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+        <h2 class="value-card-title">OUR VALUES</h2>
+        <div class="row">
+            <div class="col-md-4 col-xl-3">
+                <div class="card value-card">
+                    <div class="card-block">
+                        <p class="m-b-0 value-title">BALANCE</p>
+                        <p class="value-description">Achieving and maintaining a balance between a professional and
+                            social atmosphere in
+                            order to produce an efficient organization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-3">
+                <div class="card value-card">
+                    <div class="card-block">
+                        <p class="m-b-0 value-title">LEARNING</p>
+                        <p class="value-description"> Continuously challenging yourself and others to grow and adapt to
+                            change in order to
+                            apply learned knowledge to any situation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-3">
+                <div class="card value-card">
+                    <div class="card-block">
+                        <p class="m-b-0 value-title">STUDENT FOCUS</p>
+                        <p class="value-description">Creating fun and innovative programs by the students, for the
+                            students in order to satisfy
+                            their needs and develop a holistic individual.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-3">
+                <div class="card value-card">
+                    <div class="card-block">
+                        <p class="m-b-0 value-title">TEAMWORK</p>
+                        <p class="value-description">Building a positive foundation by mentoring, communicating and
+                            cooperating with each other
+                            in order to achieve goals and become a powerful organization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News -->
+<hr>
+<div id="news">
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <h1 class="my-4 news-header">TIE MEMBERS & ALUMNI IN THE NEWS</h1>
+
+        <!-- News One -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0 news-img"
+                         src="https://s28151.pcdn.co/wp-content/uploads/sites/2/2020/10/2020-Nipurna-Dhakal-2-scaled.jpg"
+                         alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Nipurna Dhakal ’22 visualizes new approaches to battling COVID-19</h3>
+                <p>Oct 14, 2020 - ClarkNow</p>
+                <a class="btn btn-primary news-btn"
+                   href="https://clarknow.clarku.edu/2020/10/14/nipurna-dhakal-22-visualizes-new-approaches-to-battling-covid-19/">Read
+                    More</a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- News Two -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0 news-img"
+                         src="https://i.ytimg.com/vi/yfMs_lENx18/maxresdefault.jpg"
+                         alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Clark University student competes in Microsoft Imagine Cup</h3>
+                <p>Jan 10, 2019 - ClarkNow</p>
+                <a class="btn btn-primary news-btn"
+                   href="https://clarknow.clarku.edu/2019/06/10/clark-university-student-competes-in-microsoft-imagine-cup/">Read
+                    More</a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- News Three -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0 news-img"
+                         src="https://s28151.pcdn.co/wp-content/uploads/sites/2/2018/11/2018-HackWellesley-1340x1121.jpg"
+                         alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Students win top prizes at Wellesley hackathon</h3>
+                <p>Nov 13, 2018 - ClarkNow</p>
+                <a class="btn btn-primary news-btn"
+                   href="https://clarknow.clarku.edu/2018/11/13/students-win-top-prizes-at-wellesley-hackathon/">Read
+                    More</a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- News Four -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0 news-img"
+                         src="https://s28151.pcdn.co/wp-content/uploads/sites/2/2018/09/2018-Geva-Segal-Abdur-Rahman-Muhammad-Clark-University.jpg"
+                         alt="">
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h3>Stronger Together app powers Clark students to MIT hackathon fame</h3>
+                <p>Sept 28, 2018- ClarkNow</p>
+                <a class="btn btn-primary news-btn"
+                   href="https://clarknow.clarku.edu/2018/09/28/stronger-together-app-powers-clark-students-to-mit-hackathon-fame/">Read
+                    More</a>
+            </div>
+        </div>
+        <hr>
+
+
+    </div>
+</div>
 
 <!--Footer-->
-<section id="footer" class="fixed-bottom">
+<section id="footer" class="">
     <div id="footer-content">
-    <div class="footer-1 footer-heading">
-        <h2><strong>Q</strong>uick <strong>L</strong>inks</h2>
-        <a href="eboard.html">Team</a>
-        <a href="events.html">Events</a>
-        <a href="project-submit.html">Submit a Project</a>
-        <a href="project.html">Existing Projects</a>
+        <div class="footer-1 footer-heading">
+            <h2><strong>Q</strong>uick <strong>L</strong>inks</h2>
+            <a href="eboard.html">Team</a>
+            <a href="events.html">Events</a>
+            <a href="project-submit.html">Submit a Project</a>
+            <a href="project.html">Existing Projects</a>
+        </div>
+        <div class="footer-2 footer-heading">
+            <h2><strong>S</strong>ocial <strong>M</strong>edia</h2>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkTree</a>
+        </div>
     </div>
-    <div class="footer-2 footer-heading">
-        <h2><strong>S</strong>ocial <strong>M</strong>edia</h2>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkTree</a>
-    </div>
-    </div>
-    <div class = footer-bottom>
+    <div class=footer-bottom>
         &copy; All rights reserved @ 2021<br>
-        Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S21)
+        Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S'21)
     </div>
 </section>
 </body>
