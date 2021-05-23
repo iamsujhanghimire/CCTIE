@@ -31,6 +31,14 @@ app.listen(3000, function () {
 
 const userSchema= new mongoose.Schema(
     {
+        fullname:{
+            type: String,
+            require: true
+        },
+        eboardpostion:{
+            type: String,
+            require: true
+        },
         username:{
             type: String,
             unique: true,
@@ -45,25 +53,37 @@ const userSchema= new mongoose.Schema(
             type: String,
             require: true
         },
-        fullname:{
-            type: String,
-            require: true
-        },
-        eboardpostion:{
-            type: String,
-            require: true
-        }
     }
 );
 userSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', userSchema);
 
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
+
+
+app.get('/get_current_user', function (req,res){
+    if(req.isAuthenticated()){
+        res.send({
+            message: "success",
+            data: req.user
+        })
+    }else{
+        res.send({
+            message: "failure",
+            data: {}
+        })
+
+    }
+});
+
 
 app.get('/register', (req, res) => {
     if (req.query.error) {
@@ -73,43 +93,9 @@ app.get('/register', (req, res) => {
     }
 });
 
-// app.post('/register', (req, res) => {
-//     const newUser = {
-//         username: req.body.username,
-//         fullname: req.body.fullname,
-//         // profile: req.body.profile,
-//         // brand: req.body.brand
-//     };
-//
-//     User.register(
-//         newUser,
-//         req.body.password,
-//         function (err, user) {
-//             if(req.body.password!== req.body.confirm){
-//                 console.log(err);
-//                 res.redirect("/register?error= Password must match" );
-//             }
-//             else{
-//                 const authenticate = passport.authenticate("local");
-//                 authenticate(req, res, function () {
-//                     res.redirect("/")
-//                 });
-//             }
-//             if (err) {
-//                 res.redirect("/register?error=" + err);
-//             } else {
-//                 //write into cookies, authenticate the requests
-//                 const authenticate = passport.authenticate("local");
-//                 authenticate(req, res, function () {
-//                     res.redirect("/project")
-//                 });
-//             }
-//         }
-//     );
-//
-// });
+
 app.post('/register', (req, res) => {
-    const newUser={username: req.body.username, fullname: req.body.fullname
+    const newUser={username: req.body.username, fullname: req.body.fullname, eboardpostion: req.body.eboardpostion
     };
     User.register(
         newUser,
@@ -140,26 +126,23 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    const user=new User({
-        username:req.body.username,
-        password:req.body.password
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
     });
     req.login(
         user,
-        function(err){
+        function (err) {
             if(err){
                 console.log(err);
                 res.redirect('login?error=Invalid username or password');
-            }else{
-                const authenticate = passport.authenticate(
-                    "local",
-                    {
-                        successRedirect:"/",
-                        failureRedirect:"/login?error=Username and password don't match"
-                    })
-                authenticate(req, res);
-            }
 
+            }else{
+                const authenticate = passport.authenticate("local", {
+                    successRedirect: "/",
+                    failureRedirect: "/login?error=Username or password does not match"})
+                authenticate(req,res)
+            }
         }
     )
 });
@@ -168,4 +151,12 @@ app.post('/login', (req, res) => {
 app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
+});
+
+
+app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
+    res.redirect("/project-submit.html");
+} else {
+ res.redirect("/login?error=You need to login first")
+}
 });
