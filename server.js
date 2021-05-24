@@ -218,3 +218,27 @@ app.post('/new-project',(req, res) => {
             })
 
 });
+
+app.get("/get_projects_by_filter", (req, res) => {
+    let sk = req.query.search_key;
+    console.log(sk);
+    Project.find({
+        $and: [
+            {project_name: {$regex: sk}}
+        ]
+    }, (err, data) =>{
+        if (err) {
+            res.send(
+                {
+                    "message": "db_error",
+                    "data": []
+                })
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+        console.log(data);
+    });
+});

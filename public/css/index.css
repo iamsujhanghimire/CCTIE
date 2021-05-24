@@ -16,6 +16,19 @@ body {
     margin: auto;
 }
 
+/*.carousel-caption {*/
+/*    font-family: Raleway;*/
+/*    font-size: xxx-large;*/
+/*    font-weight: bold;*/
+/*    position: absolute;*/
+/*    bottom: 85%;*/
+/*    left: 8%;*/
+/*    right: 8%;*/
+/*    z-index: 10;*/
+/*    color: white;*/
+/*    text-shadow: 0 1px 2px rgba(0,0,0,.6);*/
+/*}*/
+
 #carouselExampleControls{
     background: black;
 }
@@ -187,8 +200,8 @@ body{
 /********** NEWS *********/
 .news-header{
     font-family: Raleway;
-    color: var(--carnelian);
     font-weight: bold;
+    color: var(--carnelian);
 }
 
 .news-img{
@@ -206,5 +219,5 @@ body{
 
 .news-btn{
     border: none;
-
 }
+

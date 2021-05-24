@@ -23,14 +23,7 @@ function showList(project) {
             return project[idx]._id;
         })
         .append("<div class='row'></div>");
-    //
-    // $('#car_list .row').addClass(function (idx) {
-    //     if (idx % 2 === 0) {
-    //         return 'even_row';
-    //     } else {
-    //         return 'odd_row';
-    //     }
-    // });
+
 
     $('#project-main .row')
         .append('<div class="col-4 projectName" ></div>')
@@ -48,10 +41,25 @@ function showList(project) {
 }
 
 $.getJSON("/get_all_projects").done(function (data) {
-    console.log("I got the projects")
     if (data.message === "success") {
         showList(data["data"]);
     }
 });
 
+//Search Bar
+$.getJSON("/get_projects_by_filter").done(function (data) {
+    if (data.message === "success") {
+        showList(data["data"]);
+    }
+});
+
+function searchProject(){
+    $.get("/get_projects_by_filter",{
+        search_key: $('#search_box').val(),
+    }).done((data)=>{
+        if(data.message==="success"){
+            showList(data.data);
+        }
+    })
+}
 
