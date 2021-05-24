@@ -78,7 +78,7 @@
 </section>
 
 <section class="mainSection">
-    <form action= "/new-project" method="POST">
+    <form action= "/new-project" method="post">
         <!-- First row-->
         <div class="row" style="margin-top: 12px">
             <!-- Name -->
@@ -95,7 +95,6 @@
                 <input type="text" name="area" id="area" class="form-control" placeholder="App Development">
             </div>
         </div>
-
         <!-- 3th row-->
         <div class="row" style="margin-top: 12px">
             <!-- -->
@@ -104,14 +103,11 @@
                 <input type="text" name="people" id="people" class="form-control" placeholder="4">
             </div>
         </div>
-
-
         <!-- 7th row-->
         <div class="form-group">
             <label for="discription">Description</label>
-            <textarea class="form-control" name="people" id="discription" rows="3" placeholder="This project is about....."></textarea>
+            <textarea class="form-control" name="discription" id="discription" rows="3" placeholder="This project is about....."></textarea>
         </div>
-
         <!-- Alert -->
         <label id="alert"></label>
 
@@ -119,7 +115,7 @@
 
         <!-- Save Button -->
         <div style="margin-top: 2rem;" class="d-flex justify-content-left">
-            <input type="button" value="Save" class="btn btn-primary col-lg-2"  id="save">
+            <button type="submit" class="btn btn-primary" style="width: 20%">Save</button>
         </div>
     </form>
 </section>

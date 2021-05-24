@@ -40,6 +40,7 @@ const projectSchema = new mongoose.Schema({
 )
 const Project = mongoose.model('project', projectSchema);
 projectlist = []
+var loginName;
 
 const userSchema= new mongoose.Schema(
     {
@@ -97,7 +98,7 @@ app.get('/get_current_user', function (req,res){
 });
 
 app.get("/get_all_projects", function (req, res) {
-    console.log("I am in get all cars")
+    // console.log("I am in get all projects")
     Project.find(function (err, data) {
         if (err) {
             console.log("ERROR")
@@ -110,7 +111,7 @@ app.get("/get_all_projects", function (req, res) {
                 "message": "success",
                 "data": data
             })
-            // console.log(data);
+            console.log(data);
         }
     });
 });
@@ -128,6 +129,7 @@ app.get('/register', (req, res) => {
 app.post('/register', (req, res) => {
     const newUser={username: req.body.username, fullname: req.body.fullname, eboardpostion: req.body.eboardpostion
     };
+    loginName = req.body.username;
     console.log(newUser);
     User.register(
         newUser,
@@ -162,6 +164,7 @@ app.post('/login', (req, res) => {
         username: req.body.username,
         password: req.body.password
     });
+    loginName = req.body.username
     req.login(
         user,
         function (err) {
@@ -199,7 +202,7 @@ app.post('/new-project',(req, res) => {
         area: req.body.area,
         people: req.body.people,
         discription: req.body.discription,
-        posted_by: req.body.posted_by
+        posted_by:loginName
     }
     console.log("save: " + req.body._id)
     const np = new Project(project);
@@ -207,7 +210,7 @@ app.post('/new-project',(req, res) => {
             (err, new_project) =>{
                 if (err){
                     console.log(err["message"]);
-                    res.redirect("/edit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
+                    res.redirect("/project-submit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
                 }else{
                     console.log(new_project._id);
                     res.redirect("/project.html");
