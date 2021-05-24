@@ -30,6 +30,16 @@ app.listen(3000, function () {
     console.log("server started at 3000");
 });
 
+const projectSchema = new mongoose.Schema({
+        project_name: String,
+        area: String,
+        people: String,
+        discription: String,
+        posted_by: String
+    }
+)
+const Project = mongoose.model('project', projectSchema);
+projectlist = []
 
 const userSchema= new mongoose.Schema(
     {
@@ -86,6 +96,25 @@ app.get('/get_current_user', function (req,res){
     }
 });
 
+app.get("/get_all_projects", function (req, res) {
+    console.log("I am in get all cars")
+    Project.find(function (err, data) {
+        if (err) {
+            console.log("ERROR")
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+            // console.log(data);
+        }
+    });
+});
+
 
 app.get('/register', (req, res) => {
     if (req.query.error) {
@@ -99,6 +128,7 @@ app.get('/register', (req, res) => {
 app.post('/register', (req, res) => {
     const newUser={username: req.body.username, fullname: req.body.fullname, eboardpostion: req.body.eboardpostion
     };
+    console.log(newUser);
     User.register(
         newUser,
         req.body.password,
@@ -161,4 +191,27 @@ app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
 } else {
  res.redirect("/login?error=You need to login first")
 }
+});
+
+app.post('/new-project',(req, res) => {
+    const project = {
+        project_name: req.body.project_name,
+        area: req.body.area,
+        people: req.body.people,
+        discription: req.body.discription,
+        posted_by: req.body.posted_by
+    }
+    console.log("save: " + req.body._id)
+    const np = new Project(project);
+        np.save(
+            (err, new_project) =>{
+                if (err){
+                    console.log(err["message"]);
+                    res.redirect("/edit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
+                }else{
+                    console.log(new_project._id);
+                    res.redirect("/project.html");
+                }
+            })
+
 });

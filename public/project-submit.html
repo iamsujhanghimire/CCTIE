@@ -78,23 +78,21 @@
 </section>
 
 <section class="mainSection">
-    <form action= "/new-project" id=input_form">
-
+    <form action= "/new-project" method="POST">
         <!-- First row-->
         <div class="row" style="margin-top: 12px">
             <!-- Name -->
             <div class="form-group">
-                <label for="name" class="form-label">Project Name</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Code Game">
+                <label for="project_name" class="form-label">Project Name</label>
+                <input type="text" name="project_name" id="project_name" class="form-control" placeholder="Code Game">
             </div>
         </div>
-
         <!-- 2nd row-->
         <div class="row" style="margin-top: 12px">
             <!-- Type -->
             <div class="form-group">
-                <label for="type" class="form-label">Project Type</label>
-                <input type="text" name="type" id="type" class="form-control" placeholder="App Development">
+                <label for="area" class="form-label">Project Type</label>
+                <input type="text" name="area" id="area" class="form-control" placeholder="App Development">
             </div>
         </div>
 
@@ -102,16 +100,16 @@
         <div class="row" style="margin-top: 12px">
             <!-- -->
             <div class="form-group col-lg-3 col-md-3">
-                <label for="num" class="form-label">No. of people required</label>
-                <input type="text" name="num" id="num" class="form-control" placeholder="4">
+                <label for="people" class="form-label">No. of people required</label>
+                <input type="text" name="people" id="people" class="form-control" placeholder="4">
             </div>
         </div>
 
 
         <!-- 7th row-->
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="This project is about....."></textarea>
+            <label for="discription">Description</label>
+            <textarea class="form-control" name="people" id="discription" rows="3" placeholder="This project is about....."></textarea>
         </div>
 
         <!-- Alert -->
@@ -121,12 +119,9 @@
 
         <!-- Save Button -->
         <div style="margin-top: 2rem;" class="d-flex justify-content-left">
-            <input type="button" value="Save" class="btn btn-primary col-lg-2" onclick="check()" id="save">
+            <input type="button" value="Save" class="btn btn-primary col-lg-2"  id="save">
         </div>
-
-
     </form>
-
 </section>
 
 <section id="footer">
