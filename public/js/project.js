@@ -57,7 +57,7 @@ function showProject(idx) {
                     <br>
                     <p class ="ma">Location: ${project_data[idx].location}</p>
                     <p class ="ma">Posted by: ${project_data[idx].posted_by}</p>
-                    <p class ="ma">Discription: ${project_data[idx].discription}</p>
+                    <p class ="ma">Discription: ${project_data[idx].description}</p>
                     <button type="button" class="btn btn-primary" class = "projectEmail">Contact</button>
                         </div>`;
         })
