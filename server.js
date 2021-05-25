@@ -34,7 +34,8 @@ const projectSchema = new mongoose.Schema({
         project_name: String,
         area: String,
         people: String,
-        discription: String,
+        location:String,
+        description: String,
         posted_by: String
     }
 )
@@ -201,7 +202,8 @@ app.post('/new-project',(req, res) => {
         project_name: req.body.project_name,
         area: req.body.area,
         people: req.body.people,
-        discription: req.body.discription,
+        location: req.body.location,
+        description: req.body.description,
         posted_by:loginName
     }
     console.log("save: " + req.body._id)

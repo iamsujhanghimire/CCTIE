@@ -24,20 +24,18 @@ function showList(project) {
         })
         .append("<div class='row'></div>");
 
-
     $('#project-main .row')
-        .append('<div class="col-4 projectName" ></div>')
-        .append('<div class="col-8 model"></div>')
-
+        .append('<div class="projectName" ></div>')
+        .append('<div class="model"></div>')
 
     $('.projectName')
         .append(function (idx) {
-            return `<p class="ma">${project[idx].project_name}</p>
-                    <p class ="ma">${project[idx].area}</p>
-                    <p class ="ma">${project[idx].posted_by}</p>`;
-
+            return `<p class="ma project-title">${project[idx].project_name}</p>
+                    <p class ="ma">Project Type: ${project[idx].area}</p>
+                    <br>
+                    <p class ="ma">Location: ${project[idx].location}</p>
+                    <p class ="ma">Posted by: ${project[idx].posted_by}</p>`;
         })
-
 }
 
 $.getJSON("/get_all_projects").done(function (data) {
