@@ -3,7 +3,7 @@
     margin-left: auto;
 }
 
-#member_list img{
+.memberPic{
     border-radius: 10%;
     width: 100%;
 }
@@ -23,3 +23,18 @@
     font-style: italic;
 }
 
+.memberName{
+    padding-top: 2%;
+    color: var(--carnelian);
+    font-family: 'Raleway', sans-serif;
+}
+.memberPos{
+    padding-bottom: 1%;
+    font-size: x-large;
+}
+.infoDiv p{
+    font-family: 'Quicksand', sans-serif;
+}
+.infoDiv strong{
+    color: var(--carnelian);
+}
