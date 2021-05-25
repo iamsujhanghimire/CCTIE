@@ -18,3 +18,9 @@
 .infoDiv strong{
     color: var(--carnelian);
 }
+.memberSocials i{
+    font-size: xx-large;
+    padding-top: 2%;
+    padding-right: 2%;
+    color: var(--eerie-black);
+}

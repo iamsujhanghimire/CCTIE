@@ -31,6 +31,22 @@ function processData(raw) {
             return `<p class = memberMajor><strong>Major:</strong> ${data[idx].major}</p>`})
         .append(function (idx){
             return `<p class = memberInt><strong>Interests:</strong> ${data[idx].interests}</p>`})
+        .append(function (idx){
+            return `<div class="memberSocials"></div>`})
+    $('.memberSocials').append(function (idx){
+        return `<a class = 'memberLI'><i class="fab fa-linkedin"></i></a>
+                <a class = 'memberFB'><i class = "fab fa-facebook"> </i></a>
+                <a class = 'memberIG'><i class = "fab fa-instagram"> </i></a>`
+    })
+    $('.memberLI').attr('href', function (idx){
+        return data[idx].linkedin;
+    })
+    $('.memberFB').attr('href', function (idx){
+        return data[idx].facebook;
+    })
+    $('.memberIG').attr('href', function (idx){
+        return data[idx].instagram;
+    })
 }
 
 $(document).ready(function (){
