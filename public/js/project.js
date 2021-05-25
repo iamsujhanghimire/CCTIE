@@ -58,8 +58,12 @@ function showProject(idx) {
                     <p class ="ma">Location: ${project_data[idx].location}</p>
                     <p class ="ma">Posted by: ${project_data[idx].posted_by}</p>
                     <p class ="ma">Discription: ${project_data[idx].discription}</p>
+                    <button type="button" class="btn btn-primary" class = "projectEmail">Contact</button>
                         </div>`;
         })
+    $('.projectEmail').attr('href',function (idx){
+        return "mailto:" + project_data[idx].email;
+    })
 }
 
 

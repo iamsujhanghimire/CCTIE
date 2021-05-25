@@ -42,6 +42,7 @@ const projectSchema = new mongoose.Schema({
 const Project = mongoose.model('project', projectSchema);
 projectlist = []
 var loginName;
+var loginEmail;
 
 const userSchema= new mongoose.Schema(
     {
@@ -84,6 +85,10 @@ app.get('/', function (req, res) {
 
 
 app.get('/get_current_user', function (req,res){
+    loginName = req.user.fullname;
+    loginName = req.user.username;
+    console.log(loginName)
+    console.log(loginEmail)
     if(req.isAuthenticated()){
         res.send({
             message: "success",
@@ -94,7 +99,6 @@ app.get('/get_current_user', function (req,res){
             message: "failure",
             data: {}
         })
-
     }
 });
 
@@ -130,7 +134,6 @@ app.get('/register', (req, res) => {
 app.post('/register', (req, res) => {
     const newUser={username: req.body.username, fullname: req.body.fullname, eboardpostion: req.body.eboardpostion
     };
-    loginName = req.body.username;
     console.log(newUser);
     User.register(
         newUser,
@@ -165,7 +168,6 @@ app.post('/login', (req, res) => {
         username: req.body.username,
         password: req.body.password
     });
-    loginName = req.body.username
     req.login(
         user,
         function (err) {
@@ -204,7 +206,8 @@ app.post('/new-project',(req, res) => {
         people: req.body.people,
         location: req.body.location,
         description: req.body.description,
-        posted_by:loginName
+        posted_by:loginName,
+        email: loginEmail
     }
     console.log("save: " + req.body._id)
     const np = new Project(project);
