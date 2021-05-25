@@ -12,6 +12,7 @@ $(document).ready(function (){
 
 function showList(project) {
     console.log(project);
+    project_data = project;
     $('#project-main').empty();
 
     for (let i = 0; i < project.length; i++) {
@@ -30,13 +31,37 @@ function showList(project) {
 
     $('.projectName')
         .append(function (idx) {
-            return `<p class="ma project-title">${project[idx].project_name}</p>
+            return `<div onclick="showProject(${idx})"><p class="ma project-title">${project[idx].project_name}</p>
                     <p class ="ma">Project Type: ${project[idx].area}</p>
                     <br>
                     <p class ="ma">Location: ${project[idx].location}</p>
-                    <p class ="ma">Posted by: ${project[idx].posted_by}</p>`;
+                    <p class ="ma">Posted by: ${project[idx].posted_by}</p>
+</div>`;
+
         })
 }
+
+function clearBox()
+{
+    $("#project-detail").html("");
+}
+
+function showProject(idx) {
+    console.log(idx);
+    console.log(project_data[idx])
+    clearBox();
+    $('#project-detail')
+        .append(function () {
+            return `<div><p class="ma project-title">${project_data[idx].project_name}</p>
+                    <p class ="ma">Project Type: ${project_data[idx].area}</p>
+                    <br>
+                    <p class ="ma">Location: ${project_data[idx].location}</p>
+                    <p class ="ma">Posted by: ${project_data[idx].posted_by}</p>
+                    <p class ="ma">Discription: ${project_data[idx].discription}</p>
+                        </div>`;
+        })
+}
+
 
 $.getJSON("/get_all_projects").done(function (data) {
     if (data.message === "success") {
@@ -51,6 +76,7 @@ $.getJSON("/get_projects_by_filter").done(function (data) {
     }
 });
 
+let project_data;
 function searchProject(){
     $.get("/get_projects_by_filter",{
         search_key: $('#search_box').val(),
@@ -60,4 +86,5 @@ function searchProject(){
         }
     })
 }
+
 
