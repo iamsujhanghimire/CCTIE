@@ -2,8 +2,16 @@
     border-radius: 10%;
     width: 100%;
 }
-
+#members h1{
+    color: var(--carnelian);
+    font-size: xxx-large;
+    text-align: center;
+    text-shadow: 3px 3px var(--light-gray);
+    padding-bottom: 2%;
+    font-family: 'Quicksand', sans-serif;
+}
 .memberName{
+    text-shadow: 1px 1px var(--light-gray);
     padding-top: 2%;
     color: var(--carnelian);
     font-family: 'Raleway', sans-serif;
@@ -26,5 +34,5 @@
 }
 .memberSocials i:hover{
     color: var(--carnelian);
-    cursor: pointer
+    cursor: pointer;
 }
