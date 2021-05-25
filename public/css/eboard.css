@@ -1,26 +1,6 @@
-.nav-logo img{
-    display: block;
-    margin-left: auto;
-}
-
 .memberPic{
     border-radius: 10%;
     width: 100%;
-}
-
-.name_text {
-    margin-top: 2%;
-    font-size: x-large;
-    font-family: 'Raleway', sans-serif;;
-}
-
-.main_text {
-    font-size: large;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.main_text .h5{
-    font-style: italic;
 }
 
 .memberName{
