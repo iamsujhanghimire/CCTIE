@@ -35,19 +35,28 @@ function processData(raw) {
             return `<div class="memberSocials"></div>`})
     $('.memberSocials').append(function (idx){
         return `<a class = 'memberLI'><i class="fab fa-linkedin"></i></a>
+                <a class = 'memberEmail'><i class="fas fa-envelope"></i></a>
                 <a class = 'memberFB'><i class = "fab fa-facebook"> </i></a>
                 <a class = 'memberIG'><i class = "fab fa-instagram"> </i></a>`
     })
     $('.memberLI').attr('href', function (idx){
         return data[idx].linkedin;
     })
+    // $('.fas').attr('onclick', function (idx){
+    //     return window.location.href = data[idx].email;
+    // })
     $('.memberFB').attr('href', function (idx){
         return data[idx].facebook;
     })
     $('.memberIG').attr('href', function (idx){
         return data[idx].instagram;
     })
+
+    $('.memberEmail').attr('href',function (idx){
+        return "mailto:" + data[idx].email;
+    })
 }
+
 
 $(document).ready(function (){
     $.getJSON('/get_current_user').done(function (data) {

@@ -24,3 +24,7 @@
     padding-right: 2%;
     color: var(--eerie-black);
 }
+.memberSocials i:hover{
+    color: var(--carnelian);
+    cursor: pointer;
+}
