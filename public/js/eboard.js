@@ -42,9 +42,6 @@ function processData(raw) {
     $('.memberLI').attr('href', function (idx){
         return data[idx].linkedin;
     })
-    // $('.fas').attr('onclick', function (idx){
-    //     return window.location.href = data[idx].email;
-    // })
     $('.memberFB').attr('href', function (idx){
         return data[idx].facebook;
     })

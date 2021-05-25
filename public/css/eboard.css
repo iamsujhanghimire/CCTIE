@@ -26,5 +26,5 @@
 }
 .memberSocials i:hover{
     color: var(--carnelian);
-    cursor: pointer;
+    cursor: pointer
 }
