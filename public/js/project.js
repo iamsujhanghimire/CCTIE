@@ -51,6 +51,7 @@ function showProject(idx) {
     clearBox();
     $('#project-detail')
         .append(function () {
+            // console.log(project_data[idx].email)
             return `<div><p class="ma title-detail">${project_data[idx].project_name}</p>
                     <p class ="ma posted_on"><strong>Posted on: </strong>${project_data[idx].date}</p>
                     <hr>
@@ -63,8 +64,9 @@ function showProject(idx) {
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
                         </div>`;
         })
-    $('.projectEmail').attr('href', function (idx) {
-        return "mailto:" + project_data[idx].email;
+    $('.btn').on('click',function (idx){
+        console.log("I clicked the button")
+    location.href("mailto:" + project_data[idx].email);
     })
 }
 
