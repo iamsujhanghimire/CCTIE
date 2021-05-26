@@ -1,10 +1,10 @@
-$(document).ready(function (){
+$(document).ready(function () {
     $.getJSON('/get_current_user').done(function (data) {
         console.log(data)
-        if(data['message'] === "success"){
+        if (data['message'] === "success") {
             $('.login').remove();
             $('#showname').text(data.data.fullname);
-        }else{
+        } else {
             $('.logout').remove()
         }
     })
@@ -41,8 +41,7 @@ function showList(project) {
         })
 }
 
-function clearBox()
-{
+function clearBox() {
     $("#project-detail").html("");
 }
 
@@ -52,16 +51,19 @@ function showProject(idx) {
     clearBox();
     $('#project-detail')
         .append(function () {
-            return `<div><p class="ma project-title">${project_data[idx].project_name}</p>
-                    <p class ="ma">Project Type: ${project_data[idx].area}</p>
-                    <br>
-                    <p class ="ma">Location: ${project_data[idx].location}</p>
-                    <p class ="ma">Posted by: ${project_data[idx].posted_by}</p>
-                    <p class ="ma">Discription: ${project_data[idx].description}</p>
-                    <button type="button" class="btn btn-primary" class = "projectEmail">Contact</button>
+            return `<div><p class="ma title-detail">${project_data[idx].project_name}</p>
+                    <p class ="ma posted_on"><strong>Posted on: </strong>${project_data[idx].date}</p>
+                    <hr>
+                    <p class ="ma"><strong>Project Type: </strong>${project_data[idx].area}</p>
+                    <p class ="ma"><strong>Location: </strong>${project_data[idx].location}</p>
+                    <p class ="ma"><strong>Posted by: </strong>${project_data[idx].posted_by}</p>
+                    <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">Contact</button>
+                    <hr>
+                    <p class ="ma">${project_data[idx].description}</p>
+                    <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
                         </div>`;
         })
-    $('.projectEmail').attr('href',function (idx){
+    $('.projectEmail').attr('href', function (idx) {
         return "mailto:" + project_data[idx].email;
     })
 }
@@ -81,11 +83,12 @@ $.getJSON("/get_projects_by_filter").done(function (data) {
 });
 
 let project_data;
-function searchProject(){
-    $.get("/get_projects_by_filter",{
+
+function searchProject() {
+    $.get("/get_projects_by_filter", {
         search_key: $('#search_box').val(),
-    }).done((data)=>{
-        if(data.message==="success"){
+    }).done((data) => {
+        if (data.message === "success") {
             showList(data.data);
         }
     })

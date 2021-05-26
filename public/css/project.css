@@ -15,5 +15,27 @@
 .project-title{
     font-size: x-large;
     font-weight: bold;
+    margin-top: 2%;
 }
 
+.title-detail{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 1%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.posted_on{
+    font-size: small;
+    font-style: italic;
+}
+
+.btn-contact{
+    /*padding: 4px;*/
+    background-color: var(--carnelian);
+    border: none;
+}
+
+#search_box{
+    margin-left: 1%;
+}
