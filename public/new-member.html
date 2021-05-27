@@ -14,7 +14,7 @@
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
     <!--    CSS-->
-    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/eboard.css">
     <link rel="stylesheet" href="css/header-footer.css">
     <!--    Google Font     -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,7 +24,7 @@
     <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="js/events.js" defer></script>
+    <script src="js/eboard.js.js" defer></script>
 </head>
 
 <body class="container">
@@ -85,48 +85,58 @@
         <!-- First row-->
         <div class="row" style="margin-top: 12px">
             <!-- Name -->
-            <div class="form-group">
-                <label for="event_name" class="form-label">Event Name</label>
-                <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Event Name">
+            <div class="col-lg-3 form-group">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
             </div>
+            <div class="col-lg-3 form-group">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last name">
+            </div>
+
         </div>
         <!-- 2nd row-->
         <div class="row" style="margin-top: 12px">
             <!-- Type -->
-            <div class="form-group">
-                <label for="event_location" class="form-label">Location</label>
-                <input type="text" name="event_location" id="event_location" class="form-control" placeholder="Event Location">
+            <div class="col-lg-3 form-group">
+                <label for="email" class="form-label">Clark Email</label>
+                <input type="text" name="email" id="email" class="form-control" placeholder="jdao@clarku.edu">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="major" class="form-label">Major</label>
+                <input type="text" name="major" id="major" class="form-control" placeholder="Computer Science">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="year" class="form-label">School Year</label>
+                <input type="text" name="year" id="year" class="form-control" placeholder="Sophomore">
             </div>
         </div>
         <!-- 3th row-->
         <div class="row" style="margin-top: 12px">
             <!-- -->
             <div class="form-group col-lg-3 col-md-3">
-                <label for="event_date" class="form-label">Date</label>
-                <input type="text" name="event_date" id="event_date" class="form-control" placeholder="mm/dd/yyyy">
-            </div>
-            <div class="form-group col-lg-3 col-md-3">
-                <label for="event_time" class="form-label">Time</label>
-                <input type="text" name="event_time" id="event_time" class="form-control" placeholder="6:00 pm (EDT)">
+                <label for="position" class="form-label">Club Position</label>
+                <input type="text" name="position" id="position" class="form-control" placeholder="Marketing Coordinator">
             </div>
         </div>
         <!-- 7th row-->
-        <br>
-        <div class="form-group">
-            <label for="event_description">Event Description</label>
-            <textarea class="form-control" name="event_description" id="event_description" rows="3" placeholder="About the event..."></textarea>
-        </div>
         <!-- RSVP Link -->
         <br>
         <div class="form-group">
-            <label for="rsvp" class="form-label">RSVP Link</label>
-            <input type="text" name="rsvp" id="rsvp" class="form-control" placeholder="https://calendly.com/cctie/tie-headshots?month=2021-05">
+            <label for="picture" class="form-label">Submit a Professional Headshot</label>
+            <input type="text" name="picture" id="picture" class="form-control" placeholder="https://linkedin/my-photo.com">
         </div>
-        <!-- Reference Link -->
+        <!-- Interests -->
         <br>
         <div class="form-group">
-            <label for="reference" class="form-label">Reference Link (Social media Links to Event Page(s))</label>
-            <input type="text" name="reference" id="reference" class="form-control" placeholder="https://www.instagram.com/p/CNxfUNdHVko/">
+            <label for="interests" class="form-label">What are your interests?</label>
+            <input type="text" name="interests" id="interests" class="form-control" placeholder="Film Making">
+        </div>
+        <!-- LinkedIn Link -->
+        <br>
+        <div class="form-group">
+            <label for="linkedin" class="form-label">Please submit your LinkedIn URL</label>
+            <input type="text" name="linkedin" id="linkedin" class="form-control" placeholder="https://linkedin/johnd.com">
         </div>
         <!-- Alert -->
         <label id="alert"></label>

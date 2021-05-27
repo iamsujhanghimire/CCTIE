@@ -36,3 +36,9 @@
     color: var(--carnelian);
     cursor: pointer;
 }
+.team-btn{
+    background-color: var(--carnelian);
+    border: none;
+    margin-left: 88%;
+    margin-bottom: 1%;
+}
