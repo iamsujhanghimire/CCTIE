@@ -25,11 +25,6 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.posted_on{
-    font-size: small;
-    font-style: italic;
-}
-
 .btn-contact{
     /*padding: 4px;*/
     background-color: var(--carnelian);
@@ -39,3 +34,17 @@
 #search_box{
     margin-left: 1%;
 }
+
+.event-btn{
+    background-color: var(--carnelian);
+    border: none;
+    margin-left: 91%;
+    margin-bottom: 1%;
+}
+
+.submit-btn{
+    background-color: var(--carnelian);
+    border: none;
+    margin-bottom: 2%;
+}
+

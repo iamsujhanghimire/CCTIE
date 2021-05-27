@@ -111,18 +111,30 @@
             </div>
         </div>
         <!-- 7th row-->
+        <br>
         <div class="form-group">
             <label for="event_description">Event Description</label>
             <textarea class="form-control" name="event_description" id="event_description" rows="3" placeholder="About the event..."></textarea>
+        </div>
+        <!-- RSVP Link -->
+        <br>
+        <div class="form-group">
+            <label for="rsvp" class="form-label">RSVP Link</label>
+            <input type="text" name="rsvp" id="rsvp" class="form-control" placeholder="https://calendly.com/cctie/tie-headshots?month=2021-05">
+        </div>
+        <!-- Reference Link -->
+        <br>
+        <div class="form-group">
+            <label for="reference" class="form-label">Reference Link (Social media Links to Event Page(s))</label>
+            <input type="text" name="reference" id="reference" class="form-control" placeholder="https://www.instagram.com/p/CNxfUNdHVko/">
         </div>
         <!-- Alert -->
         <label id="alert"></label>
 
         </div>
-
         <!-- Save Button -->
-        <div style="margin-top: 2rem;" class="d-flex justify-content-left">
-            <button type="submit" class="btn btn-primary" style="width: 20%">Post</button>
+        <div class="d-flex justify-content-left">
+            <button type="submit" class="btn btn-primary submit-btn" style="width: 20%">Post</button>
         </div>
     </form>
 </section>

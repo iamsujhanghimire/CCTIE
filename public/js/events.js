@@ -50,11 +50,13 @@ function showEvent(idx) {
         .append(function () {
             // console.log(project_data[idx].email)
             return `<div><p class="ma title-detail">${event_data[idx].event_name}</p>
-                    <p class ="ma posted_on"><strong>Posted on: </strong>${event_data[idx].event_date}</p>
                     <hr>
+                    <p class ="ma"><strong>Date: </strong>${event_data[idx].event_date}</p>
+                    <p class ="ma"><strong>Time: </strong>${event_data[idx].event_time}</p>
                     <p class ="ma"><strong>Location: </strong>${event_data[idx].event_location}</p>
 <!--                    <p class ="ma"><strong>Posted by: </strong>${event_data[idx].posted_by}</p>-->
                     <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">RSVP</button>
+                    <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">Learn More</button>
                     <hr>
                     <p class ="ma">${event_data[idx].event_description}</p>
                         </div>`;
