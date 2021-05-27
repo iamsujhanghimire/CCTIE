@@ -74,6 +74,19 @@ userSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', userSchema);
 
+const eventSchema = new mongoose.Schema({
+        event_name: String,
+        event_location: String,
+        date: String,
+        time:String,
+        description: String,
+    }
+)
+const Event = mongoose.model('event', eventSchema);
+eventlist = []
+var loginName;
+var loginEmail;
+
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -191,6 +204,7 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+//Submit New Project
 
 app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
     res.redirect("/project-submit.html");
@@ -247,3 +261,41 @@ app.get("/get_projects_by_filter", (req, res) => {
         console.log(data);
     });
 });
+
+app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
+    res.redirect("/project-submit.html");
+} else {
+    res.redirect("/login?error=You need to login first")
+}
+});
+
+app.post('/new-project',(req, res) => {
+    const project = {
+        project_name: req.body.project_name,
+        area: req.body.area,
+        people: req.body.people,
+        location: req.body.location,
+        description: req.body.description,
+        posted_by:loginName,
+        email: loginEmail
+    }
+    console.log("save: " + req.body._id)
+    const np = new Project(project);
+    np.save(
+        (err, new_project) =>{
+            if (err){
+                console.log(err["message"]);
+                res.redirect("/project-submit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
+            }else{
+                console.log(new_project._id);
+                res.redirect("/project.html");
+            }
+        })
+
+});
+
+//End of Submit New Project
+
+//Submit New Event
+
+//End of Submit New Project
