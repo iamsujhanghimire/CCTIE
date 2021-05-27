@@ -24,11 +24,12 @@
     <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="js/events.js" defer></script>
+    <script src="js/project.js" defer></script>
 </head>
 
+<body class="container">
+
 <!-- Header -->
-<body>
 <section id="header">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
@@ -76,15 +77,58 @@
         </div>
     </nav>
 </section>
+<!-- End of Header -->
 
-<!--Events Page Content-->
-<section id="events-main" class="container mainSection">
-    <br>
-    <a href="/create-event.html"><button>Create New Event</button></a>
-    <br>
-    <br>
+<!-- Create Event Form -->
+<section class="mainSection">
+    <form action= "/new-event" method="post">
+        <!-- First row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="event_name" class="form-label">Event Name</label>
+                <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Event Name">
+            </div>
+        </div>
+        <!-- 2nd row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Type -->
+            <div class="form-group">
+                <label for="event-location" class="form-label">Location</label>
+                <input type="text" name="event-location" id="event-location" class="form-control" placeholder="Event Location">
+            </div>
+        </div>
+        <!-- 3th row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- -->
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="text" name="date" id="date" class="form-control" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="text" name="time" id="time" class="form-control" placeholder="6:00 pm (EDT)">
+            </div>
+        </div>
+        <!-- 7th row-->
+        <div class="form-group">
+            <label for="description">Event Description</label>
+            <textarea class="form-control" name="description" id="description" rows="3" placeholder="About the event..."></textarea>
+        </div>
+        <!-- Alert -->
+        <label id="alert"></label>
+
+        </div>
+
+        <!-- Save Button -->
+        <div style="margin-top: 2rem;" class="d-flex justify-content-left">
+            <button type="submit" class="btn btn-primary" style="width: 20%">Post</button>
+        </div>
+    </form>
 </section>
+<!-- End of Submit Project Form -->
 
+<!-- Footer -->
 <section id="footer">
     <div id="footer-content">
         <div class="footer-1 footer-heading">
@@ -106,5 +150,7 @@
         Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S21)
     </div>
 </section>
+<!-- End of Footer -->
+
 </body>
 </html>
