@@ -9,31 +9,45 @@ body {
     background: linear-gradient(to right, #f6eded, #9a9c9f);
     min-height: 100vh;
 }
+/*----------------Main Title----------------*/
+#MainTitle{
+    /*display: flex;*/
+    padding-top: 10%;
+    padding-left: 22%;
+    position: absolute;
+    color: var(--white);
+    z-index: 1;
+    text-align: center;
+    font-size: 80px;
+}
+#MainTitle strong{
+    color: var(--carnelian);
+}
+/*----------------End of Main Title----------------*/
 
-.carousel-item img{
-    max-height: 20%;
-    max-width: 100%;
-    margin: auto;
+
+/*----------------Carousel----------------*/
+@media (min-width: 576px) {
+    #MissionCarou img {
+        width: auto !important;
+        height: 400px;
+        max-height: 400px;
+        margin: auto;
+    }
+    #PrimaryCarou img {
+        width: auto !important;
+        height: 600px;
+        max-height: 600px;
+        margin: auto;
+        opacity: 30%;
+    }
 }
 
-/*.carousel-caption {*/
-/*    font-family: Raleway;*/
-/*    font-size: xxx-large;*/
-/*    font-weight: bold;*/
-/*    position: absolute;*/
-/*    bottom: 85%;*/
-/*    left: 8%;*/
-/*    right: 8%;*/
-/*    z-index: 10;*/
-/*    color: white;*/
-/*    text-shadow: 0 1px 2px rgba(0,0,0,.6);*/
-/*}*/
-
-#carouselExampleControls{
-    background: black;
+#PrimaryCarou,#MissionCarou{
+    background-color: var(--eerie-black);
 }
 
-/*/////*/
+/*----------------End of Carousel----------------*/
 
 body {
     background-color:  #eee;
@@ -68,13 +82,13 @@ body {
 }
 
 .card-title{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: var(--carnelian);
 }
 
 .card2-title{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: var(--carnelian);
     margin-left: 5%;
@@ -83,13 +97,13 @@ body {
 }
 
 .card-text{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     margin-top: 3%;
     font-size: large;
 }
 
 .card2-text{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     margin-top: 3%;
     font-size: large;
     margin-left: 5%;
@@ -125,7 +139,7 @@ body {
 
 .btn {
     margin-top: 2%;
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     background: var(--carnelian);
 }
 
@@ -148,7 +162,7 @@ body{
 }
 
 .value-card-title{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: var(--carnelian);
     text-align: center;
@@ -159,16 +173,15 @@ body{
 }
 
 .value-title{
-    font-size: 26px;
     color: #fff;
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: x-large;
     font-weight: bold;
 }
 
 .value-description{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-size: medium;
     color: #fff;
     text-align: center;
@@ -199,22 +212,21 @@ body{
 }
 /********** NEWS *********/
 .news-header{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     color: var(--carnelian);
 }
 
 .news-img{
-    height: 300px;
-    width: 500px;
+    max-width: 400px;
 }
 
 #news h3{
-    font-family: Raleway;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 #news p{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
 }
 
 .news-btn{
