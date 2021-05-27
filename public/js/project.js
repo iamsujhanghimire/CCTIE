@@ -47,7 +47,7 @@ function clearBox() {
 
 function showProject(idx) {
     console.log(idx);
-    console.log(project_data[idx])
+    console.log(project_data[idx].email)
     clearBox();
     $('#project-detail')
         .append(function () {

@@ -41,8 +41,6 @@ const projectSchema = new mongoose.Schema({
 )
 const Project = mongoose.model('project', projectSchema);
 projectlist = []
-var loginName;
-var loginEmail;
 
 const userSchema= new mongoose.Schema(
     {
@@ -77,13 +75,15 @@ const User = mongoose.model('User', userSchema);
 const eventSchema = new mongoose.Schema({
         event_name: String,
         event_location: String,
-        date: String,
-        time:String,
-        description: String,
+        event_date: String,
+        event_time:String,
+        event_description: String,
     }
 )
-const Event = mongoose.model('event', eventSchema);
+
+const Event = mongoose.model('Event', eventSchema);
 eventlist = []
+
 var loginName;
 var loginEmail;
 
@@ -133,6 +133,26 @@ app.get("/get_all_projects", function (req, res) {
         }
     });
 });
+
+app.get("/get_all_events", function (req, res) {
+    // console.log("I am in get all projects")
+    Event.find(function (err, data) {
+        if (err) {
+            console.log("ERROR")
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+            console.log(data);
+        }
+    });
+});
+
 
 
 app.get('/register', (req, res) => {
@@ -269,29 +289,51 @@ app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
 }
 });
 
-app.post('/new-project',(req, res) => {
-    const project = {
-        project_name: req.body.project_name,
-        area: req.body.area,
-        people: req.body.people,
-        location: req.body.location,
-        description: req.body.description,
-        posted_by:loginName,
-        email: loginEmail
+app.post('/new-event',(req, res) => {
+    const event = {
+        event_name: req.body.event_name,
+        event_location: req.body.event_location,
+        event_date: req.body.event_date,
+        event_time:req.body.event_time,
+        event_description: req.body.event_description,
     }
-    console.log("save: " + req.body._id)
-    const np = new Project(project);
-    np.save(
+    console.log("save: " + event)
+    const ne = new Event(event);
+    ne.save(
         (err, new_project) =>{
             if (err){
                 console.log(err["message"]);
-                res.redirect("/project-submit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
+                res.redirect("/create-email.html?error_message=" + err["message"] + "&input=" + JSON.stringify(event))
             }else{
                 console.log(new_project._id);
-                res.redirect("/project.html");
+                res.redirect("/events.html");
             }
         })
 
+});
+
+app.get("/get_events_by_filter", (req, res) => {
+    let sk = req.query.search_key;
+    console.log(sk);
+    Event.find({
+        $and: [
+            {event_name: {$regex: sk}}
+        ]
+    }, (err, data) =>{
+        if (err) {
+            res.send(
+                {
+                    "message": "db_error",
+                    "data": []
+                })
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+        }
+        console.log(data);
+    });
 });
 
 //End of Submit New Project

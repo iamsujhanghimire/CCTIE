@@ -67,7 +67,7 @@
                         <a class="nav-link dropdown-toggle logout" href="project.html" id="showname" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class=" nav-link active logout" href="project.html">View Profile</a></li>
+                            <li><a class=" nav-link active logout" >View Profile</a></li>
                             <li> <a class="nav-link active logout" href="/logout">Log out</a></li>
                         </ul>
                     </li>
@@ -78,11 +78,43 @@
 </section>
 
 <!--Events Page Content-->
-<section id="events-main" class="container mainSection">
-    <br>
-    <a href="/create-event.html"><button>Create New Event</button></a>
-    <br>
-    <br>
+
+<section>
+
+    <!-- Search Bar -->
+    <div class = "col">
+    <div class="col-3">
+        <div class="input-group mb-3 search">
+            <input id="search_box" type="search" class="form-control" placeholder="Search Events..."
+                   aria-label="Search"
+                   aria-describedby="basic-addon2" onsearch="searchEvent()">
+            <span class="input-group-text" id="basic-addon2" onclick="searchEvent()"><i
+                    class="fas fa-search"></i>
+        </span>
+        </div>
+
+    </div>
+    <div class="col-9">
+        <a href="/create-event.html" style="alignment: right"><button>Create New Event</button></a>
+    </div>
+    </div>
+    <!-- End of Search Bar -->
+
+    <div class="row">
+
+        <!-- List -->
+        <div id="event-main" class="scrollable card col-3">
+
+        </div>
+        <!-- End of List -->
+
+        <!-- Project Detail -->
+        <div id="event-detail" class="card col-9">
+
+        </div>
+        <!-- End of Project Detail -->
+
+    </div>
 </section>
 
 <section id="footer">
