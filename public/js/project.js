@@ -47,7 +47,7 @@ function clearBox() {
 
 function showProject(idx) {
     console.log(idx);
-    console.log(project_data[idx].email)
+    console.log(project_data[idx].posted_email)
     clearBox();
     $('#project-detail')
         .append(function () {
@@ -64,9 +64,9 @@ function showProject(idx) {
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
                         </div>`;
         })
-    $('.btn').on('click',function (idx){
-        console.log("I clicked the button")
-    location.href("mailto:" + project_data[idx].email);
+    $('.btn').attr('href',function (idx){
+        console.log("I pressed")
+        return "mailto:" + project_data[idx].posted_email;
     })
 }
 
