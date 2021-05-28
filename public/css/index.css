@@ -9,16 +9,17 @@ body {
     background: linear-gradient(to right, #f6eded, #9a9c9f);
     min-height: 100vh;
 }
+
 /*----------------Main Title----------------*/
 #MainTitle{
     /*display: flex;*/
-    padding-top: 10%;
-    padding-left: 22%;
+    padding-top: 13%;
+    padding-left: 18%;
     position: absolute;
     color: var(--white);
     z-index: 1;
     text-align: center;
-    font-size: 80px;
+    font-size: 50px;
 }
 #MainTitle strong{
     color: var(--carnelian);
@@ -30,23 +31,22 @@ body {
 @media (min-width: 576px) {
     #MissionCarou img {
         width: auto !important;
-        height: 400px;
+        height: 50%;
         max-height: 400px;
         margin: auto;
     }
     #PrimaryCarou img {
         width: auto !important;
-        height: 600px;
-        max-height: 600px;
+        height: 60%;
+        max-height: 60%;
         margin: auto;
-        opacity: 30%;
+        opacity: 90%;
     }
 }
 
-#PrimaryCarou,#MissionCarou{
-    background-color: var(--eerie-black);
-}
-
+/*#PrimaryCarou,#MissionCarou{*/
+/*    background-color: var(--eerie-black);*/
+/*}*/
 /*----------------End of Carousel----------------*/
 
 body {
@@ -210,7 +210,7 @@ body{
 .f-right {
     float: right;
 }
-/********** NEWS *********/
+/*----------------News----------------*/
 .news-header{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
@@ -222,7 +222,7 @@ body{
 }
 
 #news h3{
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 #news p{
@@ -232,4 +232,5 @@ body{
 .news-btn{
     border: none;
 }
+/*----------------End of News----------------*/
 
