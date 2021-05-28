@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Clark Center for TIE</title>
-
     <!--    Favicon-->
     <link rel="shortcut icon" type="image/png" href="/src/img/logo.png">
-
     <!--    Stylesheet  & Bootstrap     -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -15,31 +13,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
             crossorigin="anonymous"></script>
-
     <!--    CSS-->
     <link rel="stylesheet" href="css/eboard.css">
     <link rel="stylesheet" href="css/header-footer.css">
-
     <!--    Google Font     -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-
     <!--    Font Awesome    -->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
-
     <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!--Papa Parse-->
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"
-            integrity="sha256-Xjq9HM9n3XzT47n/NmSEaJUwPi7hme++D8mxHfSr+0Q=" crossorigin="anonymous"></script>
-
-    <script src="js/eboard.js" defer></script>
+    <script src="js/eboard.js.js" defer></script>
 </head>
 
+<body class="container">
 
-<body>
-<!--Header-->
+<!-- Header -->
 <section id="header">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
@@ -75,7 +65,7 @@
                         <a class="nav-link login" href="register.html">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle logout" href="project.html" id="showname" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black" >
+                        <a class="nav-link dropdown-toggle logout" href="project.html" id="showname" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class=" nav-link active logout" href="project.html">View Profile</a></li>
@@ -87,15 +77,78 @@
         </div>
     </nav>
 </section>
-<br>
+<!-- End of Header -->
 
-<!-- Member List -->
-<section id="members" class="container">
-    <h1><strong>Meet Our E-Board</strong></h1>
-    <div class="col-12">
-        <a class="btn btn-primary team-btn" href="/new-member.html">Add New Member</a>
-    </div>
+<!-- Create Event Form -->
+<section class="mainSection">
+    <form action= "/new-member" method="post">
+        <!-- First row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Name -->
+            <div class="col-lg-3 form-group">
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col-lg-3 form-group">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last name">
+            </div>
+
+        </div>
+        <!-- 2nd row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Type -->
+            <div class="col-lg-3 form-group">
+                <label for="member_email" class="form-label">Clark Email</label>
+                <input type="text" name="member_email" id="member_email" class="form-control" placeholder="jdao@clarku.edu">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="major" class="form-label">Major</label>
+                <input type="text" name="major" id="major" class="form-control" placeholder="Computer Science">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="year" class="form-label">School Year</label>
+                <input type="text" name="year" id="year" class="form-control" placeholder="Sophomore">
+            </div>
+        </div>
+        <!-- 3th row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- -->
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="position" class="form-label">Club Position</label>
+                <input type="text" name="position" id="position" class="form-control" placeholder="Marketing Coordinator">
+            </div>
+        </div>
+        <!-- 7th row-->
+        <!-- RSVP Link -->
+        <br>
+        <div class="form-group">
+            <label for="picture" class="form-label">Submit a Professional Headshot</label>
+            <input type="text" name="picture" id="picture" class="form-control" placeholder="https://linkedin/my-photo.com">
+        </div>
+        <!-- Interests -->
+        <br>
+        <div class="form-group">
+            <label for="interests" class="form-label">What are your interests?</label>
+            <input type="text" name="interests" id="interests" class="form-control" placeholder="Film Making">
+        </div>
+        <!-- LinkedIn Link -->
+        <br>
+        <div class="form-group">
+            <label for="linkedin" class="form-label">Please submit your LinkedIn URL</label>
+            <input type="text" name="linkedin" id="linkedin" class="form-control" placeholder="https://linkedin/johnd.com">
+        </div>
+        <!-- Alert -->
+        <label id="alert"></label>
+
+        </div>
+        <!-- Save Button -->
+        <div class="d-flex justify-content-left">
+            <button type="submit" class="btn btn-primary submit-btn" style="width: 20%">Post</button>
+        </div>
+    </form>
 </section>
+<!-- End of Submit Project Form -->
 
 <!-- Footer -->
 <section id="footer">
@@ -119,6 +172,7 @@
         Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S21)
     </div>
 </section>
+<!-- End of Footer -->
 
 </body>
 </html>

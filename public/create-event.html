@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="css/header-footer.css">
     <!--    Google Font     -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Raleway:wght@300;500;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <!--    Font Awesome    -->
     <script src="https://kit.fontawesome.com/e5b5eed843.js" crossorigin="anonymous"></script>
     <!--    Google jQuery & JS  -->
@@ -28,18 +27,16 @@
     <script src="js/events.js" defer></script>
 </head>
 
+<body class="container">
+
 <!-- Header -->
-<body>
 <section id="header">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <div class="logoDiv col-1">
-                <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width=50%
-                                                           class="logo-to-home"/></a>
+                <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width = 50% class="logo-to-home"/></a>
             </div>
-            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and
-                <strong>E</strong>ntrepreneurship
-            </div>
+            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and <strong>E</strong>ntrepreneurship</div>
 
             <div class="collapse navbar-collapse col-8" id="navbarNav">
                 <ul class="navbar-nav">
@@ -53,8 +50,7 @@
                         <a class="nav-link" href="events.html">Events</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="project.html" id="navbarDropdownMenuLink"
-                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="project.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Explore Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -69,12 +65,11 @@
                         <a class="nav-link login" href="register.html">Register</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle logout" href="project.html" id="showname" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false" style="color: black">
+                        <a class="nav-link dropdown-toggle logout" href="project.html" id="showname" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class=" nav-link active logout">View Profile</a></li>
-                            <li><a class="nav-link active logout" href="/logout">Log out</a></li>
+                            <li><a class=" nav-link active logout" href="project.html">View Profile</a></li>
+                            <li> <a class="nav-link active logout" href="/logout">Log out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -82,46 +77,70 @@
         </div>
     </nav>
 </section>
+<!-- End of Header -->
 
-<!--Events Page Content-->
-
-<section>
-
-    <!-- Search Bar -->
-    <div class="col">
-        <div class="col-3">
-            <div class="input-group mb-3 search">
-                <input id="search_box" type="search" class="form-control" placeholder="Search Events..."
-                       aria-label="Search"
-                       aria-describedby="basic-addon2" onsearch="searchEvent()">
-                <span class="input-group-text" id="basic-addon2" onclick="searchEvent()"><i
-                        class="fas fa-search"></i>
-                </span>
+<!-- Create Event Form -->
+<section class="mainSection">
+    <form action= "/new-event" method="post">
+        <!-- First row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="event_name" class="form-label">Event Name</label>
+                <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Event Name">
             </div>
         </div>
-        <div class="col-12">
-            <a class="btn btn-primary event-btn" href="/create-event.html">Create New Event</a>
+        <!-- 2nd row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- Type -->
+            <div class="form-group">
+                <label for="event_location" class="form-label">Location</label>
+                <input type="text" name="event_location" id="event_location" class="form-control" placeholder="Event Location">
+            </div>
         </div>
-    </div>
-    <!-- End of Search Bar -->
-
-    <div class="row">
-
-        <!-- List -->
-        <div id="event-main" class="scrollable card col-3">
+        <!-- 3th row-->
+        <div class="row" style="margin-top: 12px">
+            <!-- -->
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="event_date" class="form-label">Date</label>
+                <input type="text" name="event_date" id="event_date" class="form-control" placeholder="mm/dd/yyyy">
+            </div>
+            <div class="form-group col-lg-3 col-md-3">
+                <label for="event_time" class="form-label">Time</label>
+                <input type="text" name="event_time" id="event_time" class="form-control" placeholder="6:00 pm (EDT)">
+            </div>
+        </div>
+        <!-- 7th row-->
+        <br>
+        <div class="form-group">
+            <label for="event_description">Event Description</label>
+            <textarea class="form-control" name="event_description" id="event_description" rows="3" placeholder="About the event..."></textarea>
+        </div>
+        <!-- RSVP Link -->
+        <br>
+        <div class="form-group">
+            <label for="rsvp" class="form-label">RSVP Link</label>
+            <input type="text" name="rsvp" id="rsvp" class="form-control" placeholder="https://calendly.com/cctie/tie-headshots?month=2021-05">
+        </div>
+        <!-- Reference Link -->
+        <br>
+        <div class="form-group">
+            <label for="reference" class="form-label">Reference Link (Social media Links to Event Page(s))</label>
+            <input type="text" name="reference" id="reference" class="form-control" placeholder="https://www.instagram.com/p/CNxfUNdHVko/">
+        </div>
+        <!-- Alert -->
+        <label id="alert"></label>
 
         </div>
-        <!-- End of List -->
-
-        <!-- Project Detail -->
-        <div id="event-detail" class="card col-9">
-
+        <!-- Save Button -->
+        <div class="d-flex justify-content-left">
+            <button type="submit" class="btn btn-primary submit-btn" style="width: 20%">Post</button>
         </div>
-        <!-- End of Project Detail -->
-
-    </div>
+    </form>
 </section>
+<!-- End of Submit Project Form -->
 
+<!-- Footer -->
 <section id="footer">
     <div id="footer-content">
         <div class="footer-1 footer-heading">
@@ -138,10 +157,12 @@
             <a href="#">LinkTree</a>
         </div>
     </div>
-    <div class=footer-bottom>
+    <div class = footer-bottom>
         &copy; All rights reserved @ 2021<br>
         Designed & Created by Sujhan Ghimire, Dilasha Shrestha & Nipurna Dhakal as a fulfilment for CSCI 201 (S21)
     </div>
 </section>
+<!-- End of Footer -->
+
 </body>
 </html>

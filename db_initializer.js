@@ -21,6 +21,18 @@ const projectSchema = new mongoose.Schema({
 const Project = mongoose.model('project', projectSchema);
 projectlist = []
 
+const eventSchema = new mongoose.Schema({
+        event_name: String,
+        event_location: String,
+        date: String,
+        event_time:String,
+        event_description: String,
+    }
+)
+
+const Event = mongoose.model('Event', eventSchema);
+eventlist = []
+
 jsonList.forEach(function (project) {
     projectlist.push({
         "project_name": project["project_name"],
@@ -44,6 +56,14 @@ jsonList.forEach(function (project) {
 // });
 
 Project.insertMany(projectlist, function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("All data saved");
+        mongoose.connection.close();
+    }
+});
+Event.insertMany(eventlist, function (err) {
     if (err) {
         console.log(err);
     } else {
