@@ -1,0 +1,79 @@
+[
+  {
+    "first_name": "Dilasha",
+    "last_name": "Shrestha",
+    "email": "DShrestha@clarku.edu",
+    "position": "President",
+    "major": "Computer Science",
+    "year": "Junior",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4D03AQHWRuwrnI3Uiw/profile-displayphoto-shrink_800_800/0/1621712339195?e=1626912000&v=beta&t=-edLeFr0j3wV3jLeO9wkoWDFc35uqfYmHz3noLV8WRE",
+    "interests": "Product Management",
+    "linkedin": "https://www.linkedin.com/in/dilashas/"
+  },
+  {
+    "first_name": "Hung",
+    "last_name": "Dinh Nguyen",
+    "email": "HungNguyen2@clarku.edu",
+    "position": "Vice President",
+    "major": "Computer Science",
+    "year": "Senior",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4E35AQEYH4T2rUELHA/profile-framedphoto-shrink_400_400/0/1614010465689?e=1622062800&v=beta&t=9zqaoexZdBa0r9gwScCGLuBPAbLdt4-sWtKb2RL_t-Y",
+    "interests": "Data Science",
+    "linkedin": "https://www.linkedin.com/in/hungryformore/"
+  },
+  {
+    "first_name": "Nipurna",
+    "last_name": "Dhakal",
+    "email": "NiDhakal@clarku.edu",
+    "position": "Treasurer",
+    "major": "Computer Science",
+    "year": "Junior",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4D03AQFemd_S42XSqg/profile-displayphoto-shrink_800_800/0/1621713218303?e=1626912000&v=beta&t=LNcjPcXaP_Oixb22jbdlg08kYMuQ9oMjei3v_YMiXLc",
+    "interests": "Software Engineering",
+    "linkedin": "https://www.linkedin.com/in/nipurna-dhakal-14a817152/"
+  },
+  {
+    "first_name": "Natalia",
+    "last_name": "Khan",
+    "email": "nakhan@clarku.edu",
+    "position": "Secretary",
+    "major": "Screen Studies",
+    "year": "Junior",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQE8SgkpKU87Sg/profile-displayphoto-shrink_400_400/0/1581297564487?e=1626912000&v=beta&t=c5P519pmgf42PKF9ioLnjgzGtaWzNVAkFdYIGGpY-AA",
+    "interests": "Film Making",
+    "linkedin": "https://www.linkedin.com/in/-natalia-khan/"
+  },
+  {
+    "first_name": "Sujhan",
+    "last_name": "Ghimire",
+    "email": "SuGhimire@clarku.edu",
+    "position": "Marketing Coordinator",
+    "major": "Computer Science",
+    "year": "Sophomore",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQEz4vc4GHwb1A/profile-displayphoto-shrink_800_800/0/1621715520923?e=1626912000&v=beta&t=b7oVjhPL6_WNBcj2p9s9Saw7XksgtfHkWN_MfmQeLkQ",
+    "interests": "Frontend Web Development",
+    "linkedin": "https://www.linkedin.com/in/iamsujhanghimire/"
+  },
+  {
+    "first_name": "Eduardo",
+    "last_name": "Escobedo",
+    "email": "EEscobedo@clarku.edu",
+    "position": "Marketing Coordinator",
+    "major": "Psychology",
+    "year": "Sophomore",
+    "picture": "https://media-exp1.licdn.com/dms/image/C4D03AQFwbYottdm8JA/profile-displayphoto-shrink_800_800/0/1595013301206?e=1626912000&v=beta&t=_yLwsrvP23KHc-qA6o0HGoQuaezueHAEFzdosTfiQm0",
+    "interests": "Marketing",
+    "linkedin": "https://www.linkedin.com/in/eduardo-escobedo-b604a519a/"
+  },
+  {
+    "first_name": "Naomi",
+    "last_name": "Hoffman",
+    "email": "NGeffken@clarku.edu",
+    "position": "Opportunities Coordinator",
+    "major": "Computer Science",
+    "year": "Senior",
+    "picture": "https://media-exp1.licdn.com/dms/image/C5603AQGMwMbfp0CJXQ/profile-displayphoto-shrink_800_800/0/1601929110466?e=1626912000&v=beta&t=f2zShjFMdD5f-iXdk-sWP7ccK-sA5MKMe1ZWU7EbXVY",
+    "interests": "Software Engineering",
+    "linkedin": "https://www.linkedin.com/in/naomi-c-hoffman/"
+  }
+]
