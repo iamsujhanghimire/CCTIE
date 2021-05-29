@@ -57,7 +57,7 @@ $.getJSON("/get_new_members").done(function (data) {
 function showList(member) {
     console.log(member);
     for (let i = 0; i < member.length; i++) {
-        $('#membersList').append(`<li class = 'memberInfo list-group-item'></li>`);
+        $('#members').append(`<li class = 'memberInfo list-group-item'></li>`);
     }
     $('.memberInfo').append(`<div class = "row"></div>`)
     $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-9 infoDiv"></div>`)

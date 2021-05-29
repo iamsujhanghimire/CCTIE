@@ -53,18 +53,26 @@ function showProject(idx) {
         .append(function () {
             // console.log(project_data[idx].email)
             return `<div><p class="ma title-detail">${project_data[idx].project_name}</p>
-                    <p class ="ma posted_on"><strong>Posted on: </strong>${project_data[idx].date}</p>
+                    <div class="col">
+                    <p class ="col-3 ma posted_on"><strong>Posted on: </strong>${project_data[idx].date}</p>
+                    <button type="button" class="btn btn-warning " style="margin-left: 60%" id="edit">Edit</button>
+                    </div>
                     <hr>
                     <p class ="ma"><strong>Project Type: </strong>${project_data[idx].area}</p>
                     <p class ="ma"><strong>Location: </strong>${project_data[idx].location}</p>
                     <p class ="ma"><strong>Posted by: </strong>${project_data[idx].posted_by}</p>
-                    <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">Contact</button>
+                    <button type="button" class="btn btn-primary btn-contact" id ="projectEmail">Contact</button>
                     <hr>
                     <p class ="ma">${project_data[idx].description}</p>
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
                         </div>`;
         })
-    $('.btn').attr('href',function (idx){
+
+    $('#edit').on('click',function (){
+        location.href = "/project-submit.html"
+    })
+
+    $('#projectEmail').attr('href',function (idx){
         console.log("I pressed")
         return "mailto:" + project_data[idx].posted_email;
     })
