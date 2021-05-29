@@ -95,6 +95,6 @@
 }
 #news .btn-custom{
     font-family: 'Raleway', sans-serif;
-    background-color: darkred;
+    background-color: var(--carnelian);
     color: white;
 }

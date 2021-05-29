@@ -15,9 +15,8 @@
     background-color: var(--light-gray);
     font-family: 'Space Grotesk', sans-serif;
 }
-.nav-logo img{
-    display: block;
-    margin-left: auto;
+.logoDiv a{
+    margin-left: 25%;
 }
 #navbarNav ul{
     margin-left :auto;
