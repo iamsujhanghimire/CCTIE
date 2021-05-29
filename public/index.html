@@ -33,15 +33,18 @@
 <section id="header">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <div class="logoDiv col-1">
-                <a class="nav-logo" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width=50%
+            <div class="logoDiv col-lg-1 col-md-2 col-sm-3">
+                <a class="navbar-brand" href="index.html"><img src="/src/img/logo.png" alt="tie-logo" width = 50rem
                                                            class="logo-to-home"/></a>
             </div>
-            <div class="col-3 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and
+            <div class="col-lg-3 col-md-5 col-sm-5 CCTIE">Clark Center for <strong>T</strong>echnology<br> <strong>I</strong>nnovation and
                 <strong>E</strong>ntrepreneurship
             </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+            </button>
 
-            <div class="collapse navbar-collapse col-8" id="navbarNav">
+            <div class="collapse navbar-collapse col-lg-8 col-md-5 col-sm-4" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
@@ -81,18 +84,18 @@
         </div>
     </nav>
 </section>
-
+<section class="container">
 <!-- Main Body -->
 <!--Main Title-->
 <div id="TIE">
-    <h1 id="MainTitle"><strong>T</strong>echnology <strong>I</strong>nnovation <strong>&</strong><strong>E</strong>ntrepreneurship</h1>
+    <h1 id="MainTitle"><strong>T</strong>echnology<br> <strong>I</strong>nnovation <br><strong> E</strong>ntrepreneurship</h1>
 </div>
 <!--End of Main Title-->
 <!-- Top Carousel -->
 <div id="PrimaryCarou" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="src/img/1.jpeg" class="d-block w-10 top-img" alt="..." data-interval="1000">
+            <img src="src/img/1.jpeg" class="d-block w-100 top-img" alt="..." data-interval="1000">
         </div>
         <div class="carousel-item">
             <img src="src/img/2.jpeg" class="d-block w-100 top-img" alt="..." data-interval="1000">
@@ -112,44 +115,44 @@
 <!-- End of Top Carousel -->
 
 <!-- Mission Card -->
-<div class="card">
-    <div class="row ">
+<div id="mission" class="card">
+    <div class="row">
 
         <!-- Carousel start -->
-        <div class="col-md-5">
-            <div id="MissionCarou" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="src/img/Hack.jpeg" class="d-block w-10 top-img" alt="..." data-interval="1000">
-                        <!--            <div class="carousel-caption">-->
-                        <!--                <h3>TECHNOLOGY. INNOVATION. ENTREPRENEURSHIP.</h3>-->
-                        <!--            </div>-->
-                    </div>
-                    <div class="carousel-item">
-                        <img src="src/img/3.jpeg" class="d-block w-100 top-img" alt="..." data-interval="1000">
-                        <!--            <div class="carousel-caption">-->
-                        <!--                <h3>TECHNOLOGY. INNOVATION. ENTREPRENEURSHIP.</h3>-->
-                        <!--            </div>-->
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#MissionCarou"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#MissionCarou"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+<!--        <div class="col-md-5">-->
+<!--            <div id="MissionCarou" class="carousel slide" data-bs-ride="carousel">-->
+<!--                <div class="carousel-inner">-->
+<!--                    <div class="carousel-item active">-->
+<!--                        <img src="src/img/Hack.jpeg" class="d-block w-100 top-img" alt="..." data-interval="1000">-->
+<!--                        &lt;!&ndash;            <div class="carousel-caption">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                <h3>TECHNOLOGY. INNOVATION. ENTREPRENEURSHIP.</h3>&ndash;&gt;-->
+<!--                        &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div class="carousel-item">-->
+<!--                        <img src="src/img/3.jpeg" class="d-block w-100 top-img" alt="..." data-interval="1000">-->
+<!--                        &lt;!&ndash;            <div class="carousel-caption">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                <h3>TECHNOLOGY. INNOVATION. ENTREPRENEURSHIP.</h3>&ndash;&gt;-->
+<!--                        &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <button class="carousel-control-prev" type="button" data-bs-target="#MissionCarou"-->
+<!--                            data-bs-slide="prev">-->
+<!--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                        <span class="visually-hidden">Previous</span>-->
+<!--                    </button>-->
+<!--                    <button class="carousel-control-next" type="button" data-bs-target="#MissionCarou"-->
+<!--                            data-bs-slide="next">-->
+<!--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                        <span class="visually-hidden">Next</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!-- End of carousel -->
 
         <!-- Card Mission Info -->
-        <div class="col-md-7 px-3">
-            <div class="card-block px-6">
-                <h2 class="card-title">OUR MISSION</h2>
+        <div class="container px-3">
+            <h2 class="card-title">OUR MISSION</h2>
+            <div class="card-block missionCard container">
                 <p class="card-text">
                     Our mission is to harvest technological, innovative, and entrepreneurial talent and use it for
                     our community’s benefit while also placing our members in a position to succeed, both personally
@@ -161,7 +164,9 @@
                     innovate and inspire one another.
                 </p>
                 <br>
-                <a href="/eboard.html" class="mt-auto btn btn-danger">Learn More</a>
+            </div>
+            <div class="missionBtn">
+            <a href="/eboard.html" class="mt-auto btn">Learn More</a>
             </div>
         </div>
     </div>
@@ -170,17 +175,16 @@
 
 
 <!-- Value Cards -->
-<div>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div id="value">
     <div class="container">
-        <h2 class="value-card-title">OUR VALUES</h2>
+        <h2 class="card-title">OUR VALUES</h2>
 
         <!-- Value Card 1 -->
         <div class="row">
             <div class="col-md-4 col-xl-3">
                 <div class="card value-card">
                     <div class="card-block">
-                        <p class="m-b-0 value-title">BALANCE</p>
+                        <p class="m-b-0 value-title"><strong>BALANCE</strong></p>
                         <p class="value-description">Achieving and maintaining a balance between a professional and
                             social atmosphere in
                             order to produce an efficient organization.</p>
@@ -192,7 +196,7 @@
             <div class="col-md-4 col-xl-3">
                 <div class="card value-card">
                     <div class="card-block">
-                        <p class="m-b-0 value-title">LEARNING</p>
+                        <p class="m-b-0 value-title"><strong>LEARNING</strong></p>
                         <p class="value-description"> Continuously challenging yourself and others to grow and adapt to
                             change in order to
                             apply learned knowledge to any situation.</p>
@@ -204,7 +208,7 @@
             <div class="col-md-4 col-xl-3">
                 <div class="card value-card">
                     <div class="card-block">
-                        <p class="m-b-0 value-title">STUDENT FOCUS</p>
+                        <p class="m-b-0 value-title"><strong>STUDENT FOCUS</strong></p>
                         <p class="value-description">Creating fun and innovative programs by the students, for the
                             students in order to satisfy
                             their needs and develop a holistic individual.</p>
@@ -216,7 +220,7 @@
             <div class="col-md-4 col-xl-3">
                 <div class="card value-card">
                     <div class="card-block">
-                        <p class="m-b-0 value-title">TEAMWORK</p>
+                        <p class="m-b-0 value-title"><strong>TEAMWORK</strong></p>
                         <p class="value-description">Building a positive foundation by mentoring, communicating and
                             cooperating with each other
                             in order to achieve goals and become a powerful organization.</p>
@@ -247,7 +251,7 @@
             <div class="col-md-5">
                 <h3>Nipurna Dhakal ’22 visualizes new approaches to battling COVID-19</h3>
                 <p>Oct 14, 2020 - ClarkNow</p>
-                <a class="btn btn-primary news-btn"
+                <a class="btn btn-custom news-btn"
                    href="https://clarknow.clarku.edu/2020/10/14/nipurna-dhakal-22-visualizes-new-approaches-to-battling-covid-19/">Read
                     More</a>
             </div>
@@ -267,7 +271,7 @@
             <div class="col-md-5">
                 <h3>Clark University student competes in Microsoft Imagine Cup</h3>
                 <p>Jan 10, 2019 - ClarkNow</p>
-                <a class="btn btn-primary news-btn"
+                <a class="btn btn-custom news-btn"
                    href="https://clarknow.clarku.edu/2019/06/10/clark-university-student-competes-in-microsoft-imagine-cup/">Read
                     More</a>
             </div>
@@ -287,7 +291,7 @@
             <div class="col-md-5">
                 <h3>Students win top prizes at Wellesley hackathon</h3>
                 <p>Nov 13, 2018 - ClarkNow</p>
-                <a class="btn btn-primary news-btn"
+                <a class="btn btn-custom news-btn"
                    href="https://clarknow.clarku.edu/2018/11/13/students-win-top-prizes-at-wellesley-hackathon/">Read
                     More</a>
             </div>
@@ -307,7 +311,7 @@
             <div class="col-md-5">
                 <h3>Stronger Together app powers Clark students to MIT hackathon fame</h3>
                 <p>Sept 28, 2018- ClarkNow</p>
-                <a class="btn btn-primary news-btn"
+                <a class="btn btn-custom news-btn"
                    href="https://clarknow.clarku.edu/2018/09/28/stronger-together-app-powers-clark-students-to-mit-hackathon-fame/">Read
                     More</a>
             </div>
@@ -316,6 +320,7 @@
     </div>
 </div>
 <!-- End of News -->
+</section>
 
 <!--Footer-->
 <section id="footer" class="">
