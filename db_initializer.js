@@ -16,7 +16,7 @@ const projectSchema = new mongoose.Schema({
     project_name: String,
     area: String,
     people: String,
-    discription: String,
+    description: String,
     posted_by: String
     }
 )
@@ -70,7 +70,7 @@ memberjsonList.forEach(function (member) {
     memberlist.push({
         first_name: member["first_name"],
         last_name: member["last_name"],
-        member_email: member["member_email"],
+        member_email: member["email"],
         major: member["major"],
         year: member["year"],
         position: member["position"],
@@ -85,7 +85,7 @@ Member.insertMany(memberlist, function(err){
         console.log(err);
     } else {
         console.log("All data saved");
-        mongoose.connection.close();
+        // mongoose.connection.close();
     }
 });
 
@@ -99,11 +99,12 @@ Project.insertMany(projectlist, function (err) {
         mongoose.connection.close();
     }
 });
+
 Event.insertMany(eventlist, function (err) {
     if (err) {
         console.log(err);
     } else {
         console.log("All data saved");
-        mongoose.connection.close();
+        // mongoose.connection.close();
     }
 });

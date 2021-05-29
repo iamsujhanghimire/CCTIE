@@ -116,8 +116,10 @@ app.get('/', function (req, res) {
 
 
 app.get('/get_current_user', function (req,res){
-    loginName = req.user.fullname;
-    loginEmail = req.user.username;
+    if(req.isAuthenticated()) {
+        loginName = req.user.fullname;
+        loginEmail = req.user.username;
+    }
     console.log(loginName)
     console.log(loginEmail)
     if(req.isAuthenticated()){
