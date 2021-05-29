@@ -25,6 +25,15 @@ function showList(event) {
         })
         .append("<div class='row'></div>");
 
+
+    $('#event-main .row').addClass(function (idx) {
+        if (idx % 2 === 0) {
+            return 'even_row';
+        } else {
+            return 'odd_row';
+        }
+    });
+
     $('#event-main .row')
         .append('<div class="eventName" ></div>')
         .append('<div class="model"></div>')
@@ -32,10 +41,20 @@ function showList(event) {
     $('.eventName')
         .append(function (idx) {
             return `<div onclick="showEvent(${idx})"><p class="ma project-title">${event[idx].event_name}</p>
-                    <p class ="ma">Date: ${event[idx].event_date}</p>
+                    <p class ="ma">Date: ${event[idx].event_date} | Time: ${event[idx].event_time}  </p>
                     <p class ="ma">Location: ${event[idx].event_location}</p>
 </div>`;
         })
+    $('.buttonDiv')
+        .append(function (idx) {
+            return `<input type="button" class="btn btn-outline-primary button" value="Show More" style="margin-right: 50%">`
+        });
+
+    $('.button').on('click', function () {
+        const carId = $(this).parents('li').attr("value");
+        console.log(carId);
+        location.href = "detail.html?car_id=" + carId;
+    });
 }
 
 function clearBox() {
