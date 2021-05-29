@@ -323,10 +323,12 @@
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
 }
-
+.news-img{
+    border-radius: 20%;
+}
 #news img{
     max-width: 80%;
-    /*height: auto;*/
+    border-radius: 30%;
 }
 #news .row h3{
     font-family: 'Quicksand', sans-serif;
