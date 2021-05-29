@@ -88,11 +88,11 @@
 /*        margin-top: 20px;*/
 /*    }*/
 
-/*    .card-title {*/
-/*        font-family: 'Raleway', sans-serif;*/
-/*        font-weight: bold;*/
-/*        color: var(--carnelian);*/
-/*    }*/
+    /*.card-title {*/
+    /*    font-family: 'Raleway', sans-serif;*/
+    /*    font-weight: bold;*/
+    /*    color: var(--carnelian);*/
+    /*}*/
 
 /*    .card2-title {*/
 /*        font-family: 'Raleway', sans-serif;*/
@@ -305,7 +305,10 @@
 }
 .value-title{
     padding-top: 5%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
+
 #value .card-block{
     color: var(--white);
     text-align: center;
@@ -335,7 +338,7 @@
     padding-top: 2%;
 }
 #news .btn-custom{
-    font-family: 'Raleway', sans-serif;
-    background-color: darkred;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--carnelian);
     color: white;
 }
