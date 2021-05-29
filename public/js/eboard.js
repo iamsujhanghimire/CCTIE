@@ -22,6 +22,7 @@ function processData(raw) {
     $('.memberPic').attr('src', function (idx){
         return data[idx].picture;
     })
+
     $('.infoDiv')
         .append(function (idx){
             return `<h3 class="memberName">${data[idx].first_name} ${data[idx].last_name}</h3>`})
@@ -45,6 +46,53 @@ function processData(raw) {
         return "mailto:" + data[idx].email;
     })
 }
+
+$.getJSON("/get_new_members").done(function (data) {
+    if (data.message === "success") {
+        showList(data["data"]);
+    }
+});
+
+
+function showList(member) {
+    console.log(member);
+    for (let i = 0; i < member.length; i++) {
+        $('#members').append(`<li class = 'memberInfo list-group-item'></li>`);
+    }
+    $('.memberInfo').append(`<div class = "row"></div>`)
+    $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-9 infoDiv"></div>`)
+    $('.imgDiv').append(`<img class = "memberPic" alt = "..."/>`)
+    $('.memberPic').attr('src', function (idx){
+        return member[idx].picture;
+    })
+    $('.infoDiv')
+        .append(function (idx){
+            return `<h3 class="memberName">${member[idx].first_name} ${member[idx].last_name}</h3>`})
+        .append(function (idx){
+            return `<p class = "memberPos">${member[idx].position}</p>`})
+        .append(function (idx){
+            return `<p class = memberMajor><strong>Major:</strong> ${member[idx].major}</p>`})
+        .append(function (idx){
+            return `<p class = memberInt><strong>Interests:</strong> ${member[idx].interests}</p>`})
+        .append(function (idx){
+            return `<div class="memberSocials"></div>`})
+    $('.memberSocials').append(function (idx){
+        return `<a class = 'memberLI'><i class="fab fa-linkedin"></i></a>
+                <a class = 'memberEmail'><i class="fas fa-envelope"></i></a>`
+    })
+    $('.memberLI').attr('href', function (idx){
+        return member[idx].linkedin;
+    })
+
+    $('.memberEmail').attr('href',function (idx){
+        return "mailto:" + member[idx].email;
+    })
+}
+
+
+
+
+
 
 
 $(document).ready(function (){

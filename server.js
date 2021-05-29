@@ -36,7 +36,8 @@ const projectSchema = new mongoose.Schema({
         people: String,
         location:String,
         description: String,
-        posted_by: String
+        posted_by: String,
+        posted_email: String
     }
 )
 const Project = mongoose.model('project', projectSchema);
@@ -84,6 +85,23 @@ const eventSchema = new mongoose.Schema({
 const Event = mongoose.model('Event', eventSchema);
 eventlist = []
 
+const memberSchema = new mongoose.Schema({
+        first_name: String,
+        last_name: String,
+        member_email: String,
+        major:String,
+        year: String,
+        position: String,
+        picture:String,
+    interests: String,
+    linkedin: String
+    }
+)
+
+const Member = mongoose.model('Member', memberSchema);
+memberlist = []
+
+
 var loginName;
 var loginEmail;
 
@@ -98,8 +116,10 @@ app.get('/', function (req, res) {
 
 
 app.get('/get_current_user', function (req,res){
-    loginName = req.user.fullname;
-    loginEmail = req.user.username;
+    if(req.isAuthenticated()) {
+        loginName = req.user.fullname;
+        loginEmail = req.user.username;
+    }
     console.log(loginName)
     console.log(loginEmail)
     if(req.isAuthenticated()){
@@ -137,6 +157,25 @@ app.get("/get_all_projects", function (req, res) {
 app.get("/get_all_events", function (req, res) {
     // console.log("I am in get all projects")
     Event.find(function (err, data) {
+        if (err) {
+            console.log("ERROR")
+            res.send({
+                "message": "internal database error",
+                "data": []
+            });
+        } else {
+            res.send({
+                "message": "success",
+                "data": data
+            })
+            console.log(data);
+        }
+    });
+});
+
+app.get("/get_new_members", function (req, res) {
+    // console.log("I am in get all projects")
+    Member.find(function (err, data) {
         if (err) {
             console.log("ERROR")
             res.send({
@@ -241,7 +280,7 @@ app.post('/new-project',(req, res) => {
         location: req.body.location,
         description: req.body.description,
         posted_by:loginName,
-        email: loginEmail
+        posted_email: loginEmail
     }
     console.log("save: " + req.body._id)
     const np = new Project(project);
@@ -335,6 +374,36 @@ app.get("/get_events_by_filter", (req, res) => {
         console.log(data);
     });
 });
+
+
+
+app.post('/new-member',(req, res) => {
+    const member = {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        member_email: req.body.member_email,
+        major:req.body.major,
+        year: req.body.year,
+        position: req.body.position,
+        picture:req.body.picture,
+        interests: req.body.interests,
+        linkedin: req.body.linkedin
+    }
+    console.log("save: " + req.body._id)
+    const nm = new Member(member);
+    nm.save(
+        (err, new_member) =>{
+            if (err){
+                console.log(err["message"]);
+                res.redirect("/new-member.html?error_message=" + err["message"] + "&input=" + JSON.stringify(member))
+            }else{
+                console.log(new_member._id);
+                res.redirect("/eboard.html");
+            }
+        })
+
+});
+
 
 //End of Submit New Project
 

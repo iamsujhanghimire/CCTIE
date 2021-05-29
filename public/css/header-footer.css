@@ -1,5 +1,5 @@
 :root {
-    /* CSS HEX */
+    /* CSS HEX- */
     --rich-black-fogra-39: #0b090aff;
     --eerie-black: #62727a;
     --blood-red: #660708ff;
@@ -36,7 +36,9 @@
     color: var(--rich-black-fogra-39);
 }
 .navbar-custom .navbar-toggler{
-    border-color: var(--carnelian);
+    background-color: var(--carnelian);
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
 }
 
 #footer-content{
