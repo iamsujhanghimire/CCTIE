@@ -24,10 +24,10 @@
     <!--    Google jQuery & JS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="js/eboard.js.js" defer></script>
+    <script src="js/eboard.js" defer></script>
 </head>
 
-<body class="container">
+<body>
 
 <!-- Header -->
 <section id="header">
@@ -87,7 +87,7 @@
 <!-- End of Header -->
 
 <!-- Create Event Form -->
-<section class="mainSection">
+<section class="mainSection container">
     <form action= "/new-member" method="post">
         <!-- First row-->
         <div class="row" style="margin-top: 12px">
@@ -150,8 +150,8 @@
 
         </div>
         <!-- Save Button -->
-        <div class="d-flex justify-content-left">
-            <button type="submit" class="btn btn-primary submit-btn" style="width: 20%">Post</button>
+        <div class="d-flex justify-content-left" id="submitBtn">
+            <button type="submit" class="btn btn-custom submit-btn" style="width: 20%">Add Member</button>
         </div>
     </form>
 </section>

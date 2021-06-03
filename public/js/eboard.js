@@ -67,27 +67,6 @@ function showList(member) {
 }
 
 
-
-// function deleteTeam(){
-//     let memberID;
-//     $(this).addClass('selected')
-//
-//     $.each($('.memberList .selected'),function (){
-//         memberID = $(this).parent().parent().parent().attr('value');
-//         console.log(memberID)
-//     });
-//
-    // if(memberID){
-    //     $.post('/delete_member_by_id',{_ids: memberID})
-    //             .done((info) =>{
-    //                 if(info.message === "Success"){}
-    //                 location.href = "/eboard.html"
-    //             })
-    // }
-
-// }
-
-
 $.getJSON("/get_new_members").done(function (data) {
     if (data.message === "success") {
         showList(data["data"]);
@@ -101,6 +80,8 @@ $(document).ready(function (){
             $('.login').remove();
             $('#showname').text(data.data.fullname);
         }else{
+            $('.btnDiv').remove()
+            $('.deleteDiv').remove()
             $('.logout').remove()
         }
     })
