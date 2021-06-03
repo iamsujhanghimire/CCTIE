@@ -1,5 +1,5 @@
 $.ajax({
-    url: 'data/members.csv',
+    url: 'data/members.json',
     dataType: 'text'
 }).done(processData);
 
@@ -10,8 +10,6 @@ function processData(raw) {
 
 function showList(member) {
     console.log(member);
-    console.log(member[0]._id)
-
     $('#members').append(`<div class="memberInfo"></div>`)
     $('.memberInfo').append(`<ul class="memberList"></ul>`)
 
@@ -24,7 +22,7 @@ function showList(member) {
 
     $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-7 infoDiv"></div>
             <div class ="col-lg-2 deleteDiv"></div>`)
-    $('.deleteDiv').append(`<button class = "btn" id = "delTeam-btn" onclick="deleteTeam()">Delete</button>`)
+    $('.deleteDiv').append(`<button class = "btn" id = "delTeam-btn">Delete</button>`)
     $('.imgDiv').append(`<img class = "memberPic" alt = "..."/>`)
     $('.memberPic').attr('src', function (idx){
         return member[idx].picture;
@@ -51,25 +49,43 @@ function showList(member) {
     $('.memberEmail').attr('href',function (idx){
         return "mailto:" + member[idx].email;
     })
+
+    $('.member .deleteDiv button').on('click', function (){
+        let memberID;
+        $(this).addClass('selected')
+        memberID = $(this).parents('li').attr('value')
+
+        if(memberID){
+            $.post('/delete_member_by_id',{_ids: memberID})
+                    .done((info) =>{
+                        if(info.message === "Success"){}
+                        location.href = "/eboard.html"
+                    })
+        }
+
+    })
 }
 
-function deleteTeam(){
-    let memberID;
-    $('#delTeam-btn').addClass('selected');
-    $.each($('.memberList .selected'),function (){
-        memberID = $(this).parents('li').attr('value');
-        console.log(memberID)
-    });
 
-    if(memberID){
-        $.post('/delete_member_by_id',{_ids: memberID})
-                .done((info) =>{
-                    if(info.message === "Success"){}
-                    location.href = "/eboard.html"
-                })
-    }
 
-}
+// function deleteTeam(){
+//     let memberID;
+//     $(this).addClass('selected')
+//
+//     $.each($('.memberList .selected'),function (){
+//         memberID = $(this).parent().parent().parent().attr('value');
+//         console.log(memberID)
+//     });
+//
+    // if(memberID){
+    //     $.post('/delete_member_by_id',{_ids: memberID})
+    //             .done((info) =>{
+    //                 if(info.message === "Success"){}
+    //                 location.href = "/eboard.html"
+    //             })
+    // }
+
+// }
 
 
 $.getJSON("/get_new_members").done(function (data) {
