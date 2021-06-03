@@ -75,12 +75,19 @@
     border-radius: 5%;
     height: 100%;
 }
+.value-block{
+    padding-bottom: 2%;
+}
+.value-description{
+    max-width: 80%;
+    margin: auto;
+}
 /*News*/
 #news h1{
     color: var(--carnelian);
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .news-img{
     border-radius: 20%;
