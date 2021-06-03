@@ -79,6 +79,8 @@ const eventSchema = new mongoose.Schema({
         event_date: String,
         event_time:String,
         event_description: String,
+        event_rsvp: String,
+        event_ref: String
     }
 )
 
@@ -335,6 +337,8 @@ app.post('/new-event',(req, res) => {
         event_date: req.body.event_date,
         event_time:req.body.event_time,
         event_description: req.body.event_description,
+        event_rsvp: "http://" + req.body.rsvp + "/",
+        event_ref: "http://" + req.body.reference + "/"
     }
     console.log("save: " + event)
     const ne = new Event(event);

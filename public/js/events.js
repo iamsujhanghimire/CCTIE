@@ -63,6 +63,7 @@ function clearBox() {
 
 function showEvent(idx) {
     console.log(idx);
+    console.log(event_data)
     // console.log(event_data[idx].email)
     clearBox();
     $('#event-detail')
@@ -74,16 +75,24 @@ function showEvent(idx) {
                     <p class ="ma"><strong>Time: </strong>${event_data[idx].event_time}</p>
                     <p class ="ma"><strong>Location: </strong>${event_data[idx].event_location}</p>
 <!--                    <p class ="ma"><strong>Posted by: </strong>${event_data[idx].posted_by}</p>-->
-                    <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">RSVP</button>
-                    <button type="button" class="btn btn-primary btn-contact" class = "projectEmail">Learn More</button>
+                    <button type="button" class="btn btn-primary btn-contact" id="eventRSVP">RSVP</button>
+                    <button type="button" class="btn btn-primary btn-contact" id="eventInfo">Learn More</button>
                     <hr>
                     <p class ="ma">${event_data[idx].event_description}</p>
                         </div>`;
         })
-    // $('.btn').on('click',function (idx){
-    //     console.log("I clicked the button")
-    //     location.href("mailto:" + project_data[idx].email);
-    // })
+
+    console.log(event_data[0].event_name)
+    $('#eventRSVP').on('click', function (event){
+        console.log(event);
+        window.location = event_data[idx].event_rsvp;
+    })
+    $('#eventInfo').on('click', function (event){
+        console.log(event);
+        window.location = event_data[idx].event_ref;
+    })
+
+
 }
 
 
@@ -112,4 +121,16 @@ function searchEvent() {
     })
 }
 
+$(document).ready(function (){
+    $.getJSON('/get_current_user').done(function (data) {
+        console.log(data)
+        if(data['message'] === "success"){
+            $('.login').remove();
+            $('#showname').text(data.data.fullname);
+        }else{
+            $('.logout').remove()
+            $('#addDiv').remove()
 
+        }
+    })
+})
