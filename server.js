@@ -67,6 +67,9 @@ const userSchema= new mongoose.Schema(
             type: String,
             require: true
         },
+        saves:[{
+            title: String
+        }]
     }
 );
 userSchema.plugin(passportLocalMongoose);
@@ -410,3 +413,39 @@ app.post('/new-member',(req, res) => {
 //Submit New Event
 
 //End of Submit New Project
+
+app.post('/save_project', (req, res) => {
+    if (req.isAuthenticated()) {
+        // const project_id=req.body.stock_num;
+        const project = {
+            title:req.body.project.title,
+            // year: req.body.car.year,
+            // make: req.body.car.make,
+            // model: req.body.car.model,
+            // color: req.body.car.color,
+            // price: req.body.car.price
+        }
+        console.log(project);
+        User.updateOne(
+            {_id: req.user._id, 'saves.title': {$ne: project.title}},
+            {
+                $push: {saves: project}
+            },
+            {},
+            (err, info) => {
+                if (err) {
+                    res.send({
+                        message: "database error"
+                    });
+                } else {
+                    res.send({
+                        message: "success"
+                    })
+                }})
+    } else {
+        res.send({
+            message: "login required",
+            data: ("/login")
+        })
+    }
+});

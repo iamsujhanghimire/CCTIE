@@ -42,8 +42,6 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 4%;
-
-
 }
 .custom-btn button{
     background-color: var(--carnelian);
@@ -77,4 +75,28 @@
 form label{
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+}
+
+.login-btn{
+    background-color: var(--carnelian);
+    color: white;
+    border-radius: 8px;
+    float: right;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-bottom: 2%;
+}
+
+.register-btn{
+    background-color: var(--carnelian);
+    color: white;
+    border-radius: 8px;
+    float: right;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-bottom: 2%;
+}
+
+.btn{
+    color: white;
 }

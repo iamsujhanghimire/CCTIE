@@ -55,7 +55,7 @@ function showProject(idx) {
             return `<div><p class="ma title-detail">${project_data[idx].project_name}</p>
                     <div class="row test">
 <!--                    <p class ="col-3 ma posted_on"><strong>Posted on: 05/28/2021</strong></p>-->
-                    <button type="button" class="btn btn-danger save-btn col-1" id="edit">Save</button>
+                    <button type="button" class="btn btn-danger save-btn col-1" id="save" value="${idx}">Save</button>
                     <button type="button" class="btn btn-danger edt-btn col-1" id="edit">Edit</button>
                     </div>
                     <hr>
@@ -105,4 +105,21 @@ function searchProject() {
     })
 }
 
+let save = []
+console.log(save)
+$('.btn').on('click',function (){
+    const projectID = $(this).val();
+    const project=projects[projectID]
+
+    $.post('/save_project', {project}).done((data) =>{
+        console.log(data)
+        if(data["message"] === "success"){
+            //likes.push(cars[carID])
+            location.reload()
+            // console.log(likes)
+        }else{
+            location.href = data.data+"?error="+data.message;
+        }
+    })
+})
 
