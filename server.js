@@ -149,7 +149,7 @@ app.get("/get_all_projects", function (req, res) {
                 "message": "success",
                 "data": data
             })
-            console.log(data);
+            // console.log(data);
         }
     });
 });
@@ -282,18 +282,37 @@ app.post('/new-project',(req, res) => {
         posted_by:loginName,
         posted_email: loginEmail
     }
-    console.log("save: " + req.body._id)
-    const np = new Project(project);
+    console.log("save:" + req.body._id)
+    if(req.body._id){
+        console.log("I am in edit")
+        Project.updateOne(
+            {_id: req.body._id},
+            {$set: project},
+            {runValidators:true},
+            (err, info) =>{
+                if(err){
+                    console.log(err.message);
+                    res.redirect("/project-submit.html?error_message=" + JSON.stringify(err.errors))
+                }else{
+                    console.log(info);
+                    res.redirect("/project.html");
+                }
+            }
+        )
+    }
+    else {
+        const np = new Project(project);
         np.save(
-            (err, new_project) =>{
-                if (err){
+            (err, new_project) => {
+                if (err) {
                     console.log(err["message"]);
                     res.redirect("/project-submit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
-                }else{
+                } else {
                     console.log(new_project._id);
                     res.redirect("/project.html");
                 }
             })
+    }
 
 });
 
