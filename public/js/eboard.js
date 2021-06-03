@@ -6,61 +6,25 @@ $.ajax({
 function processData(raw) {
     const data = Papa.parse(raw.trim(), {header: true}).data;
     console.log(data);
-    // Adding UL and List Element
-    $('#members').append(`<ul class = "membersList"></ul>`)
-    for (const member of data) {
-        console.log(member)
-        $('.membersList')
-            .append(`<li class = 'memberInfo list-group-item'></li>`)
-    }
-
-    // Filling LI with information and pictures
-
-    $('.memberInfo').append(`<div class = "row"></div>`)
-    $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-9 infoDiv"></div>`)
-    $('.imgDiv').append(`<img class = "memberPic" alt = "..."/>`)
-    $('.memberPic').attr('src', function (idx){
-        return data[idx].picture;
-    })
-
-    $('.infoDiv')
-        .append(function (idx){
-            return `<h3 class="memberName">${data[idx].first_name} ${data[idx].last_name}</h3>`})
-        .append(function (idx){
-            return `<p class = "memberPos">${data[idx].position}</p>`})
-        .append(function (idx){
-            return `<p class = memberMajor><strong>Major:</strong> ${data[idx].major}</p>`})
-        .append(function (idx){
-            return `<p class = memberInt><strong>Interests:</strong> ${data[idx].interests}</p>`})
-        .append(function (idx){
-            return `<div class="memberSocials"></div>`})
-    $('.memberSocials').append(function (idx){
-        return `<a class = 'memberLI'><i class="fab fa-linkedin"></i></a>
-                <a class = 'memberEmail'><i class="fas fa-envelope"></i></a>`
-    })
-    $('.memberLI').attr('href', function (idx){
-        return data[idx].linkedin;
-    })
-
-    $('.memberEmail').attr('href',function (idx){
-        return "mailto:" + data[idx].email;
-    })
 }
-
-$.getJSON("/get_new_members").done(function (data) {
-    if (data.message === "success") {
-        showList(data["data"]);
-    }
-});
-
 
 function showList(member) {
     console.log(member);
+    console.log(member[0]._id)
+
+    $('#members').append(`<div class="memberInfo"></div>`)
+    $('.memberInfo').append(`<ul class="memberList"></ul>`)
+
     for (let i = 0; i < member.length; i++) {
-        $('#members').append(`<li class = 'memberInfo list-group-item'></li>`);
+        $('.memberList').append(`<li class = 'member list-group-item'></li>`);
     }
-    $('.memberInfo').append(`<div class = "row"></div>`)
-    $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-9 infoDiv"></div>`)
+    $('.member').append(`<div class = "row"></div>`).attr('value', function (idx){
+        return member[idx]._id;
+    })
+
+    $('.memberInfo .row').append(`<div class ="col-lg-3 imgDiv"></div> <div class ="col-lg-7 infoDiv"></div>
+            <div class ="col-lg-2 deleteDiv"></div>`)
+    $('.deleteDiv').append(`<button class = "btn" id = "delTeam-btn" onclick="deleteTeam()">Delete</button>`)
     $('.imgDiv').append(`<img class = "memberPic" alt = "..."/>`)
     $('.memberPic').attr('src', function (idx){
         return member[idx].picture;
@@ -74,9 +38,9 @@ function showList(member) {
             return `<p class = memberMajor><strong>Major:</strong> ${member[idx].major}</p>`})
         .append(function (idx){
             return `<p class = memberInt><strong>Interests:</strong> ${member[idx].interests}</p>`})
-        .append(function (idx){
+        .append(function (){
             return `<div class="memberSocials"></div>`})
-    $('.memberSocials').append(function (idx){
+    $('.memberSocials').append(function (){
         return `<a class = 'memberLI'><i class="fab fa-linkedin"></i></a>
                 <a class = 'memberEmail'><i class="fas fa-envelope"></i></a>`
     })
@@ -89,11 +53,30 @@ function showList(member) {
     })
 }
 
+function deleteTeam(){
+    let memberID;
+    $('#delTeam-btn').addClass('selected');
+    $.each($('.memberList .selected'),function (){
+        memberID = $(this).parents('li').attr('value');
+        console.log(memberID)
+    });
+
+    if(memberID){
+        $.post('/delete_member_by_id',{_ids: memberID})
+                .done((info) =>{
+                    if(info.message === "Success"){}
+                    location.href = "/eboard.html"
+                })
+    }
+
+}
 
 
-
-
-
+$.getJSON("/get_new_members").done(function (data) {
+    if (data.message === "success") {
+        showList(data["data"]);
+    }
+});
 
 $(document).ready(function (){
     $.getJSON('/get_current_user').done(function (data) {
