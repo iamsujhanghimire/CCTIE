@@ -64,7 +64,7 @@ function showProject(idx) {
                     <p class ="ma"><strong>Project Type: </strong>${project_data[idx].area}</p>
                     <p class ="ma"><strong>Location: </strong>${project_data[idx].location}</p>
                     <p class ="ma"><strong>Posted by: </strong>${project_data[idx].posted_by}</p>
-                    <button type="button" class="btn btn-primary btn-contact" id ="projectEmail">Contact</button>
+                    <a type="button" class="btn btn-primary btn-contact" id ="projectEmail">Contact</a>
                     <hr>
                     <p class ="ma">${project_data[idx].description}</p>
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
@@ -80,9 +80,11 @@ function showProject(idx) {
         location.href = '/project-submit.html?project_idx='+projectID;
     })
 
-    $('#projectEmail').attr('href',function (idx){
-        console.log("I pressed")
+    $('.projectName').on('click', function (){
+        console.log("i contacted")
+        $('#projectEmail').attr('href',function (){
         return "mailto:" + project_data[idx].posted_email;
+    })
     })
 }
 
