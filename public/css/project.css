@@ -39,3 +39,25 @@
 #search_box{
     margin-left: 1%;
 }
+
+.edt-btn{
+    background-color: var(--carnelian);
+    float: right;
+    border: none;
+    color: white;
+    margin-left: 1%;
+}
+
+.save-btn{
+    background-color: var(--carnelian);
+    float: right;
+    border: none;
+    color: white;
+
+}
+
+.test{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
