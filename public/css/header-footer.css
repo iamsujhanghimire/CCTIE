@@ -10,6 +10,7 @@
     --light-gray: #d3d3d3ff;
     --cultured: #f5f3f4ff;
     --white: #ffffffff;
+    --celadon-blue: #457b9dff;
 }
 .navbar-custom{
     background-color: var(--light-gray);

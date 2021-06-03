@@ -1,9 +1,11 @@
+let name;
 $(document).ready(function () {
     $.getJSON('/get_current_user').done(function (data) {
         console.log(data)
         if (data['message'] === "success") {
             $('.login').remove();
             $('#showname').text(data.data.fullname);
+            name = data.data.fullname;
         } else {
             $('.logout').remove()
         }
@@ -56,7 +58,7 @@ function showProject(idx) {
                     <div class="row test">
 <!--                    <p class ="col-3 ma posted_on"><strong>Posted on: 05/28/2021</strong></p>-->
                     <button type="button" class="btn btn-danger save-btn col-1" id="save" value="${idx}">Save</button>
-                    <button type="button" class="btn btn-danger edt-btn col-1" id="edit">Edit</button>
+<!--                    // <button type="button" class="btn btn-danger edt-btn col-1" id="edit" value="${idx}">Edit</button>-->
                     </div>
                     <hr>
                     <p class ="ma"><strong>Project Type: </strong>${project_data[idx].area}</p>
@@ -68,9 +70,14 @@ function showProject(idx) {
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
                         </div>`;
         })
-
+    if(name == project_data[idx].posted_by){
+        $('.test').append(
+        `<button type="button" className="btn btn-danger edt-btn col-3" id="edit" value="${idx}">Edit</button>`)
+    }
     $('#edit').on('click',function (){
-        location.href = "/project-submit.html"
+        const projectID = $(this).val();
+        // const proj =project_data[projectID]
+        location.href = '/project-submit.html?project_idx='+projectID;
     })
 
     $('#projectEmail').attr('href',function (idx){
@@ -105,21 +112,4 @@ function searchProject() {
     })
 }
 
-let save = []
-console.log(save)
-$('.btn').on('click',function (){
-    const projectID = $(this).val();
-    const project=projects[projectID]
-
-    $.post('/save_project', {project}).done((data) =>{
-        console.log(data)
-        if(data["message"] === "success"){
-            //likes.push(cars[carID])
-            location.reload()
-            // console.log(likes)
-        }else{
-            location.href = data.data+"?error="+data.message;
-        }
-    })
-})
 
