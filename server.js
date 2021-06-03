@@ -67,6 +67,9 @@ const userSchema= new mongoose.Schema(
             type: String,
             require: true
         },
+        saves:[{
+            title: String
+        }]
     }
 );
 userSchema.plugin(passportLocalMongoose);
@@ -151,7 +154,7 @@ app.get("/get_all_projects", function (req, res) {
                 "message": "success",
                 "data": data
             })
-            console.log(data);
+            // console.log(data);
         }
     });
 });
@@ -284,18 +287,37 @@ app.post('/new-project',(req, res) => {
         posted_by:loginName,
         posted_email: loginEmail
     }
-    console.log("save: " + req.body._id)
-    const np = new Project(project);
+    console.log("save:" + req.body._id)
+    if(req.body._id){
+        console.log("I am in edit")
+        Project.updateOne(
+            {_id: req.body._id},
+            {$set: project},
+            {runValidators:true},
+            (err, info) =>{
+                if(err){
+                    console.log(err.message);
+                    res.redirect("/project-submit.html?error_message=" + JSON.stringify(err.errors))
+                }else{
+                    console.log(info);
+                    res.redirect("/project.html");
+                }
+            }
+        )
+    }
+    else {
+        const np = new Project(project);
         np.save(
-            (err, new_project) =>{
-                if (err){
+            (err, new_project) => {
+                if (err) {
                     console.log(err["message"]);
                     res.redirect("/project-submit.html?error_message=" + err["message"] + "&input=" + JSON.stringify(project))
-                }else{
+                } else {
                     console.log(new_project._id);
                     res.redirect("/project.html");
                 }
             })
+    }
 
 });
 
@@ -428,3 +450,39 @@ app.post('/delete_member_by_id', (req, res) => {
 //Submit New Event
 
 //End of Submit New Project
+
+app.post('/save_project', (req, res) => {
+    if (req.isAuthenticated()) {
+        // const project_id=req.body.stock_num;
+        const project = {
+            title:req.body.project.title,
+            // year: req.body.car.year,
+            // make: req.body.car.make,
+            // model: req.body.car.model,
+            // color: req.body.car.color,
+            // price: req.body.car.price
+        }
+        console.log(project);
+        User.updateOne(
+            {_id: req.user._id, 'saves.title': {$ne: project.title}},
+            {
+                $push: {saves: project}
+            },
+            {},
+            (err, info) => {
+                if (err) {
+                    res.send({
+                        message: "database error"
+                    });
+                } else {
+                    res.send({
+                        message: "success"
+                    })
+                }})
+    } else {
+        res.send({
+            message: "login required",
+            data: ("/login")
+        })
+    }
+});
