@@ -36,9 +36,47 @@
     color: var(--carnelian);
     cursor: pointer;
 }
-.team-btn{
+.addTeam-btn{
+    font-family: 'Quicksand', sans-serif;
     background-color: var(--carnelian);
+    color: var(--white);
     border: none;
-    margin-left: 88%;
-    margin-bottom: 1%;
+    width: 20%;
+}
+.addTeam-btn:hover{
+    background-color: var(--eerie-black);
+    color: var(--white);
+}
+
+#delTeam-btn{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--carnelian);
+    color: var(--white);
+    border: none;
+    width: 70%;
+    padding-right: 1%;
+
+}
+
+#delTeam-btn:hover{
+    background-color: var(--eerie-black);
+    color: var(--white);
+}
+
+.deleteDiv{
+    text-align: center;
+    padding: 1% 0;
+}
+
+.btnDiv{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1%;
+}
+#submitBtn{
+    padding-bottom: 1%;
+}
+.btn-custom{
+    background-color: var(--carnelian);
+    color: var(--white);
 }

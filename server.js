@@ -423,6 +423,20 @@ app.post('/new-member',(req, res) => {
 
 });
 
+//Deleting Members
+app.post('/delete_member_by_id', (req, res) => {
+    Member.deleteOne(
+        {"_id":{$in:req.body._ids}},
+        {},
+        (err) => {
+            if(err){
+                res.send({"message":"database error"})
+            }else{
+                res.send({
+                    "message":"Success"
+                })
+            }})
+});
 
 //End of Submit New Project
 
