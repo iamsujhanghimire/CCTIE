@@ -43,11 +43,12 @@
     align-items: center;
     margin-bottom: 4%;
 
+
 }
 .custom-btn button{
     background-color: var(--carnelian);
     color: var(--white);
-    width: 50%;
+    width: 70%;
     font-family: 'Quicksand', sans-serif;
 }
 .card{
@@ -65,9 +66,15 @@
     margin-top: 10%;
     border-width: 5px;
     border-color: var(--eerie-black);
-    width: 40%;
+    width: 60%;
+    height: auto;
 }
 
 .pos{
     margin-top: 2%;
+}
+
+form label{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
