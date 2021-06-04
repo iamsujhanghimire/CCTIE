@@ -70,8 +70,8 @@ function showList(member) {
         $('.deleteDiv').show()
     }
     else{
-        $('.btnDiv').show()
-        $('.deleteDiv').show()
+        $('.btnDiv').remove()
+        $('.deleteDiv').remove()
     }
 }
 
