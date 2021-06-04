@@ -41,5 +41,16 @@ $('form').on('submit', function () {
             return input
         });
     }
+    let errorMessage = null
+    $.each($('input,textarea'), function () {
+        if (!$(this).val()) {
+            errorMessage = `${$(this).parent().find('label').text()} cannot be empty`;
+            return false
+        }
+    });
+    if (errorMessage !== null) {
+        $('#alert').text(errorMessage);
+        return false;
+    }
 
 });
