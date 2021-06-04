@@ -281,6 +281,15 @@ app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
 }
 });
 
+app.get("/profile", (req, res) => {
+    //This page can be viewed only after login
+    if (req.isAuthenticated()) {
+        res.sendFile(__dirname + "/src/profile.html");
+    } else {
+        res.sendFile("/login.html?error=You need to login first");
+    }
+});
+
 app.post('/new-project',(req, res) => {
     const project = {
         project_name: req.body.project_name,
@@ -489,3 +498,5 @@ app.post('/save_project', (req, res) => {
         })
     }
 });
+
+
