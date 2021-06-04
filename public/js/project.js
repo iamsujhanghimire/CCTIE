@@ -5,7 +5,7 @@ $(document).ready(function () {
         if (data['message'] === "success") {
             $('.login').remove();
             $('#showname').text(data.data.fullname);
-            name = data.data.fullname;
+            email_access = data.data.username;
         } else {
             $('.logout').remove()
         }
@@ -73,7 +73,7 @@ function showProject(idx) {
                     <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualification}</p>
                         </div>`;
         })
-    if(name === project_data[idx].posted_by){
+    if(email_access === project_data[idx].posted_email){
         $('.test').append(
         `<div id="editBtn" class="col-lg-1"><button type="button" class="btn btn-custom edt-btn" id="edit" value="${idx}" >Edit</button></div>`)
     }
