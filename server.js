@@ -230,7 +230,7 @@ app.post('/register', (req, res) => {
                     res.redirect("/")
                 });
             }
-            
+
             if(err){
                 console.log(err);
                 res.redirect("/register?error="+err);
