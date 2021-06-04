@@ -27,7 +27,7 @@
     <script src="js/project-submit.js" defer></script>
 </head>
 
-<body class="container">
+<body>
 
 <!-- Header -->
 <section id="header">
@@ -87,7 +87,7 @@
 <!-- End of Header -->
 
 <!-- Submit Project Form -->
-<section class="mainSection" id = "edit_project">
+<section class="mainSection container" id = "edit_project">
     <form action= "/new-project" method="post" id = "project_submit">
         <!-- First row-->
         <div class="row" style="margin-top: 12px">
@@ -122,14 +122,18 @@
             <label for="description">Description</label>
             <textarea class="form-control" name="description" id="description" rows="3" placeholder="This project is about....."></textarea>
         </div>
+        <div class="form-group">
+            <label for="qualification">Qualifications</label>
+            <textarea class="form-control" name="qualification" id="qualification" rows="3" placeholder="What skills/qualities are you looking for in your teammate..."></textarea>
+        </div>
         <!-- Alert -->
         <label id="alert"></label>
 
         </div>
 
         <!-- Save Button -->
-        <div style="margin-top: 2rem;" class="d-flex justify-content-left">
-            <button type="submit" class="btn btn-primary" style="width: 20%">Save</button>
+        <div style="margin-top: 2rem;" class="d-flex justify-content-left" id="saveProjectDiv">
+            <button type="submit" class="btn btn-custom" style="width: 20%">Save</button>
         </div>
     </form>
 </section>

@@ -37,7 +37,8 @@ const projectSchema = new mongoose.Schema({
         location:String,
         description: String,
         posted_by: String,
-        posted_email: String
+        posted_email: String,
+        qualification: String
     }
 )
 const Project = mongoose.model('project', projectSchema);
@@ -285,7 +286,8 @@ app.post('/new-project',(req, res) => {
         location: req.body.location,
         description: req.body.description,
         posted_by:loginName,
-        posted_email: loginEmail
+        posted_email: loginEmail,
+        qualification: req.body.qualification
     }
     console.log("save:" + req.body._id)
     if(req.body._id){

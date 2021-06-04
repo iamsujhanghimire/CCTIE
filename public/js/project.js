@@ -70,7 +70,7 @@ function showProject(idx) {
                     <a type="button" class="btn btn-custom btn-contact" id ="projectEmail">Contact</a>
                     <hr>
                     <p class ="ma">${project_data[idx].description}</p>
-                    <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualifications}</p>
+                    <p class ="ma"><strong>Preferred Qualifications: \n</strong>${project_data[idx].qualification}</p>
                         </div>`;
         })
     if(name === project_data[idx].posted_by){

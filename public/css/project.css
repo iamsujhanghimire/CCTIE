@@ -79,3 +79,13 @@
     background-color: var(--eerie-black);
     color: var(--white);
 }
+#saveProjectDiv{
+    padding-bottom: 1%;
+}
+
+label{
+    font-family: 'Quicksand', sans-serif;
+}
+.form-group textarea{
+    font-family: 'Raleway', sans-serif;
+}
