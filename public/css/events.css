@@ -83,3 +83,11 @@
     padding-left: 1%;
     color: black;
 }
+
+.form-group label{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.form-group input, textarea{
+    font-family: 'Raleway', sans-serif;
+}
