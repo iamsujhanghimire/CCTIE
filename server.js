@@ -102,8 +102,8 @@ const memberSchema = new mongoose.Schema({
         year: String,
         position: String,
         picture:String,
-    interests: String,
-    linkedin: String
+        interests: String,
+        linkedin: String
     }
 )
 
@@ -220,6 +220,17 @@ app.post('/register', (req, res) => {
         newUser,
         req.body.password,
         function(err, user){
+            if(req.body.password!== req.body.confirm){
+                console.log(err);
+                res.redirect("/register?error= Password must match" );
+            }
+            else{
+                const authenticate = passport.authenticate("local");
+                authenticate(req, res, function () {
+                    res.redirect("/")
+                });
+            }
+
             if(err){
                 console.log(err);
                 res.redirect("/register?error="+err);
@@ -279,6 +290,15 @@ app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
 } else {
  res.redirect("/login?error=You need to login first")
 }
+});
+
+app.get("/profile", (req, res) => {
+    //This page can be viewed only after login
+    if (req.isAuthenticated()) {
+        res.redirect("/profile.html");
+    } else {
+        res.redirect("/login.html?error=You need to login first");
+    }
 });
 
 app.post('/new-project',(req, res) => {
@@ -364,8 +384,8 @@ app.post('/new-event',(req, res) => {
         event_date: req.body.event_date,
         event_time:req.body.event_time,
         event_description: req.body.event_description,
-        event_rsvp: "http://" + req.body.rsvp + "/",
-        event_ref: "http://" + req.body.reference + "/"
+        event_rsvp: "http://" + req.body.event_rsvp + "/",
+        event_ref: "http://" + req.body.event_ref + "/"
     }
     console.log("save: " + event)
     const ne = new Event(event);
@@ -489,3 +509,5 @@ app.post('/save_project', (req, res) => {
         })
     }
 });
+
+

@@ -1,9 +1,33 @@
 [
   {
-    "project_name": "Smart Buy",
+    "project_name": "Face detection",
     "area": "App Development",
     "people": "4",
-    "description": "Lest make an app that makes buying smart",
-    "posted_by": "nidhakal"
+    "location": "On-Campus",
+    "description": "This project focuses on building a face detection software using the OpenCV library. The face detection program will be modelled in a way that it can detect faces in live stream videos from webcam or video files stored in a PC’s local storage. The software uses pre-trained XML classifiers to detect faces in real-time and track them. You can also use different classifiers to identify various objects through this detection program.",
+    "posted_by": "Nipurna Dhakal",
+    "posted_email": "nidhakal@clarku.edu",
+    "qualification": "Familiar with Python. Worked with librosa. Past experience with OpenCV"
+  },
+  {
+    "project_name": "Online auction system",
+    "area": "Web Development",
+    "people": "4",
+    "location": "Virtual",
+    "description": "In an online auction, buyers and sellers engage in transactional business, wherein buyers purchase items through price bidding. Here, the bids have a starting price and an ending time. Potential buyers who place the highest bidding price for an item are declared the winners and owners of particular items. \n\nIn this project, you will create a secure online auction system using the fraud detection method with binary classification. If a user wants to buy a product through an online auction, they must provide their identification details like PAN number, email address, license number, etc. The system will then screen the users, authenticate, and authorize them. Only authorized users can bid in the auction. The system will be designed to predict fraudulent users in the early stages, thereby eliminating the risk of online fraud and scams. This beginner-level computer science projects will help build a strong foundation for fundamental programming concepts.",
+    "posted_by": "Dilasha Shrestha",
+    "posted_email": "DShrestha@clarku.edu",
+    "qualification": "Familiar with C. Past experience with Python. TA experiences preffered"
+  },
+  {
+    "project_name": "Evaluation of academic performance",
+    "area": "Machine Learning",
+    "people": "7",
+    "location": "Virtual",
+    "description": "This project involves the creation of an evaluation system that can analyze the academic performance of students by utilizing the fuzzy logic method. In the fuzzy logic method, you will consider three parameters, namely, attendance, internal marks, and external marks, to evaluate the final academic performance of students of an institution. The fuzzy inference system is much more accurate than conventional techniques.\n\nWhile developing this Computer Science project, make sure that the student information uploaded is correct (devoid of errors). Faulty data entry may lead to inaccurate results.",
+    "posted_by": "Sujhan Ghimire",
+    "posted_email": "SuGhimire@clarku.edu",
+    "qualification": "Familiar with C. Past experience with Python. TA experiences preffered"
   }
+
 ]

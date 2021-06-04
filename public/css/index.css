@@ -64,6 +64,7 @@
 }
 .value-title{
     padding-top: 5%;
+    font-weight: bold;
 }
 #value .card-block{
     color: var(--white);
