@@ -3,20 +3,23 @@ function load_user(user) {
 
         user.save_project.forEach((save)=>{
             console.log(save.project_name)
-            $('#save_grid').append(`<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 cardholder" style="list-style-type:none">
-            <p class="ma title-detail">${save.project_name}</p>
-            <p class ="ma">${save.area}</p>
+            $('#save_grid').append(`<div class=" card col-lg-4 col-md-4 col-sm-6 col-xs-12 savedList">
+            <h4 class="ma title-detail">${save.project_name}</h4>
+            <h5 class ="ma text-muted">${save.area}</h5>
              <p class ="ma"> ${save.posted_by}</p>
-             <a type="button" class="btn btn-custom btn-contact" id ="projectEmail" value = "${save.posted_by}">Contact</a>
-                </li>`);
-        });
-        $('.btn-contact').on('click', function (){
-            const project_email = $(this).val();
-            console.log("i contacted")
-            $('#projectEmail').attr('href',function (){
-                return "mailto:" + project_email;
-            })
+             <a type="button" class="btn btn-custom btn-contact" id ="projectEmail" href = "mailto:${save.posted_email}">Contact</a>
+             `);
 
+        // });
+        // $('.btn-contact').on('click', function (){
+        //     const project_email = $(this).val();
+        //     console.log("i contacted")
+        //     $('#projectEmail').attr('href',function (){
+        //         return "mailto:" + project_email;
+        //     })
+function addContact(){
+
+}
 
     })}
 }
