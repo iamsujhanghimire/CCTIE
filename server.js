@@ -220,6 +220,17 @@ app.post('/register', (req, res) => {
         newUser,
         req.body.password,
         function(err, user){
+            if(req.body.password!== req.body.confirm){
+                console.log(err);
+                res.redirect("/register?error= Password must match" );
+            }
+            else{
+                const authenticate = passport.authenticate("local");
+                authenticate(req, res, function () {
+                    res.redirect("/")
+                });
+            }
+            
             if(err){
                 console.log(err);
                 res.redirect("/register?error="+err);
