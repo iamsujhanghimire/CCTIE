@@ -102,8 +102,8 @@ const memberSchema = new mongoose.Schema({
         year: String,
         position: String,
         picture:String,
-    interests: String,
-    linkedin: String
+        interests: String,
+        linkedin: String
     }
 )
 
@@ -373,8 +373,8 @@ app.post('/new-event',(req, res) => {
         event_date: req.body.event_date,
         event_time:req.body.event_time,
         event_description: req.body.event_description,
-        event_rsvp: "http://" + req.body.rsvp + "/",
-        event_ref: "http://" + req.body.reference + "/"
+        event_rsvp: "http://" + req.body.event_rsvp + "/",
+        event_ref: "http://" + req.body.event_ref + "/"
     }
     console.log("save: " + event)
     const ne = new Event(event);
