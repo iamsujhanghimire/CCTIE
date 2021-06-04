@@ -284,7 +284,7 @@ app.get('/submit_project', (req, res) => {  if (req.isAuthenticated()) {
 app.get("/profile", (req, res) => {
     //This page can be viewed only after login
     if (req.isAuthenticated()) {
-        res.sendFile(__dirname + "/src/profile.html");
+        res.redirect("/profile.html");
     } else {
         res.sendFile("/login.html?error=You need to login first");
     }
