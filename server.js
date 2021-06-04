@@ -286,7 +286,7 @@ app.get("/profile", (req, res) => {
     if (req.isAuthenticated()) {
         res.redirect("/profile.html");
     } else {
-        res.sendFile("/login.html?error=You need to login first");
+        res.redirect("/login.html?error=You need to login first");
     }
 });
 
