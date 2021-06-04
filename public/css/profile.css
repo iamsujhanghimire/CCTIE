@@ -6,3 +6,17 @@
     color: var(--carnelian);
     font-family: 'Raleway', sans-serif;
 }
+
+.savedList{
+    margin:1%;
+    padding-bottom: 1%;
+    max-width: 30%;
+}
+.savedList a{
+    background-color: var(--carnelian);
+    color: var(--white);
+}
+
+.savedList h4{
+    padding-top: 2%;
+}
