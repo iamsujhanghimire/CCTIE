@@ -1,3 +1,22 @@
+let president_email;
+
+$(document).ready(function (){
+    $.getJSON('/get_current_user').done(function (data) {
+        // console.log(data)
+        if(data['message'] === "success"){
+            $('.login').remove();
+            $('#showname').text(data.data.fullname);
+            console.log(data.data.username)
+            president_email = data.data.username
+            console.log(president_email)
+        }else{
+            // $('.btnDiv').remove()
+            // $('.deleteDiv').remove()
+            $('.logout').remove()
+        }
+    })
+})
+
 $.ajax({
     url: 'data/members.json',
     dataType: 'text'
@@ -7,6 +26,7 @@ function processData(raw) {
     const data = Papa.parse(raw.trim(), {header: true}).data;
     console.log(data);
 }
+
 
 function showList(member) {
     console.log(member);
@@ -64,7 +84,7 @@ function showList(member) {
         }
 
     })
-    console.log(president_email)
+    console.log("emai;"+ president_email)
     if ( president_email == member[0].member_email){
         $('.btnDiv').show()
         $('.deleteDiv').show()
@@ -82,20 +102,6 @@ $.getJSON("/get_new_members").done(function (data) {
     }
 });
 
-let president_email;
 
-$(document).ready(function (){
-    $.getJSON('/get_current_user').done(function (data) {
-        // console.log(data)
-        if(data['message'] === "success"){
-            $('.login').remove();
-            $('#showname').text(data.data.fullname);
-            president_email = data.data.username
-        }else{
-            // $('.btnDiv').remove()
-            // $('.deleteDiv').remove()
-            $('.logout').remove()
-        }
-    })
-})
+
 
