@@ -42,15 +42,12 @@
 
 .test #edit{
     background-color: var(--carnelian);
-    float: right;
     border: none;
     color: white;
-    margin-left: 1%;
 }
 
 .save-btn{
     background-color: var(--carnelian);
-    float: right;
     border: none;
     color: white;
 
@@ -60,4 +57,25 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 1%;
+}
+
+.btn-custom{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--carnelian);
+    color: var(--white);
+}
+.btn-custom:hover{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--eerie-black);
+    color: var(--white);
+}
+#edit{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--carnelian);
+    color: var(--white);
+}
+#edit:hover{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--eerie-black);
+    color: var(--white);
 }
