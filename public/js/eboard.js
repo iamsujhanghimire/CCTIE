@@ -47,7 +47,7 @@ function showList(member) {
     })
 
     $('.memberEmail').attr('href',function (idx){
-        return "mailto:" + member[idx].email;
+        return "mailto:" + member[idx].member_email;
     })
 
     $('.member .deleteDiv button').on('click', function (){
