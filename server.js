@@ -68,8 +68,11 @@ const userSchema= new mongoose.Schema(
             type: String,
             require: true
         },
-        saves:[{
-            title: String
+        save_project:[{
+            project_name: String,
+            area: String,
+            posted_by: String,
+            posted_email: String
         }]
     }
 );
@@ -457,18 +460,16 @@ app.post('/save_project', (req, res) => {
     if (req.isAuthenticated()) {
         // const project_id=req.body.stock_num;
         const project = {
-            title:req.body.project.title,
-            // year: req.body.car.year,
-            // make: req.body.car.make,
-            // model: req.body.car.model,
-            // color: req.body.car.color,
-            // price: req.body.car.price
+            project_name: req.body.project.project_name,
+            area: req.body.project.area,
+            posted_by:req.body.project.posted_by,
+            posted_email: req.body.project.posted_email
         }
-        console.log(project);
+        // console.log(project_save);
         User.updateOne(
-            {_id: req.user._id, 'saves.title': {$ne: project.title}},
+            {_id: req.user._id, 'saves.project_name': {$ne: project.project_name}},
             {
-                $push: {saves: project}
+                $push: {save_project: project}
             },
             {},
             (err, info) => {

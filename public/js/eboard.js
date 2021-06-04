@@ -64,6 +64,15 @@ function showList(member) {
         }
 
     })
+    console.log(president_email)
+    if ( president_email == member[0].member_email){
+        $('.btnDiv').show()
+        $('.deleteDiv').show()
+    }
+    else{
+        $('.btnDiv').show()
+        $('.deleteDiv').show()
+    }
 }
 
 
@@ -73,15 +82,18 @@ $.getJSON("/get_new_members").done(function (data) {
     }
 });
 
+let president_email;
+
 $(document).ready(function (){
     $.getJSON('/get_current_user').done(function (data) {
         console.log(data)
         if(data['message'] === "success"){
             $('.login').remove();
             $('#showname').text(data.data.fullname);
+            president_email = data.data.username
         }else{
-            $('.btnDiv').remove()
-            $('.deleteDiv').remove()
+            // $('.btnDiv').remove()
+            // $('.deleteDiv').remove()
             $('.logout').remove()
         }
     })

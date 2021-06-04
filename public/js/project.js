@@ -75,7 +75,7 @@ function showProject(idx) {
         })
     if(name === project_data[idx].posted_by){
         $('.test').append(
-        `<div id="editBtn" class="col-lg-1"><button type="button" class="btn btn-custom edt-btn" id="edit" value="${idx}">Edit</button></div>`)
+        `<div id="editBtn" class="col-lg-1"><button type="button" class="btn btn-custom edt-btn" id="edit" value="${idx}" >Edit</button></div>`)
     }
     $('#edit').on('click',function (){
         const projectID = $(this).val();
@@ -89,7 +89,28 @@ function showProject(idx) {
         return "mailto:" + project_data[idx].posted_email;
     })
     })
+
+    $('#save').on('click',function (){
+        console.log("I saved")
+        const projectID = $(this).val();
+        const project= project_data[projectID]
+        $.post('/save_project', {project}).done((data) =>{
+            console.log(data)
+            if(data["message"] === "success"){
+                //likes.push(cars[carID])
+                // location.reload()
+                // console.log(likes)
+            }else{
+                location.href = data.data+"?error="+data.message;
+            }
+
+
+        })
+
+    })
+
 }
+
 
 
 $.getJSON("/get_all_projects").done(function (data) {

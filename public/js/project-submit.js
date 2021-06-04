@@ -18,15 +18,16 @@ if(project_idx){
 }
 let project_details
 
-function fillProject(car) {
-    project_details = car[project_idx];
-    console.log(car[project_idx])
-    $('#project_name').val(car[project_idx].project_name);
-    $('#area').val(car[project_idx].area);
-    $('#people').val(car[project_idx].people);
-    $('#location').val(car[project_idx].location);
-    $('#description').val(car[project_idx].description);
-    console.log(car[project_idx]._id)
+function fillProject(project) {
+    project_details = project[project_idx];
+    console.log(project[project_idx])
+    $('#project_name').val(project[project_idx].project_name);
+    $('#area').val(project[project_idx].area);
+    $('#people').val(project[project_idx].people);
+    $('#location').val(project[project_idx].location);
+    $('#description').val(project[project_idx].description);
+    $('#qualification').val(project[project_idx].description);
+    console.log(project[project_idx]._id)
 }
 
 
