@@ -100,3 +100,7 @@ form label{
 .btn{
     color: white;
 }
+
+#error_msg{
+    color: red;
+}
